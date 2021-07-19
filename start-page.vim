@@ -1,6 +1,3 @@
-function InsertNewLine()
-        call append('$', '')
-endfun
 function Start()
         " Don't run if: we have commandline arguments, we don't have an empty
         " buffer, if we've not invoked as vim or gvim, or if we'e start in insert mode
@@ -22,6 +19,7 @@ function Start()
                 \ nonumber
                 \ noswapfile
                 \ norelativenumber
+
 
         " Now we can just write to the buffer, whatever you want.
         call append('$', '                        |                    YYYY                     YYYY                                         |')
@@ -60,10 +58,6 @@ function Start()
         call append('$', '                        |                                                                                          |')
         call append('$', '                        |                                                                                          |')
         call append('$', '                        |                                                                                          |')
-
-        "for line in split(system('cowsay "This is yeyee2901"'), '\n')
-        "        call append('$', '        ' . l:line)
-        "endfor
 
         " No modifications to this buffer
         setlocal nomodifiable nomodified
