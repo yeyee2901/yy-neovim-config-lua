@@ -1,5 +1,6 @@
 # Neovim >= 0.5.0 Configuration files,  
-## except that everything is a Lua file :)
+## except that everything is a Lua file :)  
+## Everything is more compact here!
 ![image](https://user-images.githubusercontent.com/55247343/126057008-4ef89222-791a-4450-b517-f435dcb9cc51.png)
   
 # FEATURES
@@ -53,8 +54,6 @@ otherwise, you can always use link method
 - Install via pip: cmake-language-server
 - Install via npm (global installation): vim-language-server, bash-language-server, pyright
   (UNIX based systems have to install as root)
-- Install the 'Vim-Plug' plugin manager. There is a bash install script available in this dir.
-        bash INSTALL_VimPlug.sh
 
 - For Lua language server, it's a bit complicated, but I recommend you following these guide:  
         https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)  
