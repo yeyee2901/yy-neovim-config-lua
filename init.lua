@@ -120,5 +120,5 @@ require('keymaps')
 
 
 -- Launch start up page
-vim.cmd('source ./start-page.vim')
+vim.cmd('source ~/.config/nvim/start-page.vim')
 vim.cmd('autocmd VimEnter * call Start()')
