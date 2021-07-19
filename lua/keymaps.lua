@@ -3,55 +3,66 @@ vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Wrapper function for remaps
+local _noremap = function(mode, key, map_to)
+  vim.api.nvim_set_keymap(mode, key, map_to, {noremap = true, silent = false})
+end
+
+local _noremap_expr = function(mode, key, map_to)
+  vim.api.nvim_set_keymap(mode, key, map_to, {noremap = true, silent = false, expr = true})
+end
+
 -- Togle highlighting after searching
-vim.api.nvim_set_keymap('n', '<S-h>', '<cmd>set hlsearch!<CR>', {noremap = true, silent = false})
+_noremap('n', '<S-h>', '<cmd>set hlsearch!<CR>')
 
 -- Simple file browser
-vim.api.nvim_set_keymap('n', '<Leader>ef', '<cmd>Lexplore<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>ef', '<cmd>Lexplore<CR>')
 
 -- Allow navigation in wrapped line
-vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true, silent = true})
+_noremap('n', 'j', 'gj')
+_noremap('n', 'k', 'gk')
 
 -- Visual mode editing
-vim.api.nvim_set_keymap('v', '<Tab>',   '>gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<BS>',    'xgv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<S-a>',   '$A',  {noremap = true, silent = true})
+_noremap('v', '<Tab>',   '>gv')
+_noremap('v', '<S-Tab>', '<gv')
+_noremap('v', '<BS>',    'xgv')
+
+-- append to all selected line via VISUAL-BLOCK mode only.
+_noremap('v', '<S-a>a', '$<S-a>')
 
 
 -- Window Keymappings ------------------------------------------------------------
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {noremap = true, silent = true})
+_noremap('n', '<C-l>', '<C-w>l')
+_noremap('n', '<C-h>', '<C-w>h')
+_noremap('n', '<C-j>', '<C-w>j')
+_noremap('n', '<C-k>', '<C-w>k')
 
 -- Rotate / move window around
-vim.api.nvim_set_keymap('n', '<S-r>', '<C-w>r', {noremap = true, silent = true})
+_noremap('n', '<S-r>', '<C-w>r')
 
 -- Resize window
 -- Up, right    = increase
 -- down, left   = decrease
-vim.api.nvim_set_keymap('n', '<M-Up>',    '<C-w>+', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-Down>',  '<C-w>-', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-Right>', '<C-w>>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-Left>',  '<C-w><', {noremap = true, silent = true})
+_noremap('n', '<M-Up>',    '<C-w>+')
+_noremap('n', '<M-Down>',  '<C-w>-')
+_noremap('n', '<M-Right>', '<C-w>>')
+_noremap('n', '<M-Left>',  '<C-w><')
 
 
 -- Buffer keymappings ------------------------------------------------------------
-vim.api.nvim_set_keymap('n', '<S-b>b', '<cmd>buffers<CR>',   {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-b>n', '<cmd>enew<CR>',      {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-b>q', '<cmd>bdelete<CR>',   {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-b>l', '<cmd>bNext<CR>',     {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-b>h', '<cmd>bprevious<CR>', {noremap = true, silent = true})
+_noremap('n', '<S-b>b', '<cmd>buffers<CR>')
+_noremap('n', '<S-b>n', '<cmd>enew<CR>')
+_noremap('n', '<S-b>q', '<cmd>bdelete<CR>')
+_noremap('n', '<S-b>l', '<cmd>bNext<CR>')
+_noremap('n', '<S-b>h', '<cmd>bprevious<CR>')
 
 
 -- Tab keymappings ---------------------------------------------------------------
-vim.api.nvim_set_keymap('n', '<S-t>n', '<cmd>tabnew<CR>',      {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-t>q', '<cmd>tabclose<CR>',    {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-t>l', '<cmd>tabNext<CR>',     {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-t>h', '<cmd>tabprevious<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Tab>',  '<cmd>tabNext<CR>',     {noremap = true, silent = true})
+_noremap('n', '<S-t>n', '<cmd>tabnew<CR>')
+_noremap('n', '<S-t>q', '<cmd>tabclose<CR>')
+_noremap('n', '<S-t>l', '<cmd>tabNext<CR>')
+_noremap('n', '<S-t>h', '<cmd>tabprevious<CR>')
+_noremap('n', '<Tab>',  '<cmd>tabNext<CR>')
 
 
 -- Plugin specific keymaps -------------------------------------------------------
@@ -59,51 +70,51 @@ vim.api.nvim_set_keymap('n', '<Tab>',  '<cmd>tabNext<CR>',     {noremap = true, 
 -- All silent = false, so we can see what command was called
 
 -- PLUGIN: CMake
-vim.api.nvim_set_keymap('n', '<Leader>cg', '<cmd>CMakeClean<CR><cmd>CMakeGenerate<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>cb', '<cmd>CMakeBuild<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>cq', '<cmd>CMakeClose<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>cg', '<cmd>CMakeClean<CR><cmd>CMakeGenerate<CR>')
+_noremap('n', '<Leader>cb', '<cmd>CMakeBuild<CR>')
+_noremap('n', '<Leader>cq', '<cmd>CMakeClose<CR>')
 
 -- PLUGIN: NERDTree
-vim.api.nvim_set_keymap('n', '<Leader>nt', '<cmd>NERDTreeToggle<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>nt', '<cmd>NERDTreeToggle<CR>')
 
 -- PLUGIN: Floaterm
-vim.api.nvim_set_keymap('n', '<Leader>ft', '<cmd>FloatermNew<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>FloatermNew fff<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>ft', '<cmd>FloatermNew<CR>')
+_noremap('n', '<Leader>ff', '<cmd>FloatermNew fff<CR>')
 
 -- PLUGIN: LSP helper (I don't know if there's a more proper way, contact me if you know)
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>',  {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>',       {noremap = true, silent = false})
+_noremap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+_noremap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+_noremap('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
 
 -- Snippet & Code completion on TAB press
-vim.api.nvim_set_keymap('i', '<Tab>', 'compe#confirm("<Tab>")', {expr = true, noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', '<C-q>', 'compe#close("<C-q>")',   {expr = true, noremap = true, silent = true})
+_noremap_expr('i', '<Tab>', 'compe#confirm("<Tab>")')
+_noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
 
 -- PLUGIN: Telescope
-vim.api.nvim_set_keymap('n', '<Leader>tf', '<cmd>Telescope find_files<CR>',                 {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tz', '<cmd>Telescope current_buffer_fuzzy_find<CR>',  {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tb', '<cmd>Telescope buffers<CR>',                    {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>t?', '<cmd>Telescope keymaps<CR>',                    {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>ts', ':Telescope grep_string search=',                {noremap = true, silent = false})
+_noremap('n', '<Leader>tf', '<cmd>Telescope find_files<CR>')
+_noremap('n', '<Leader>tz', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
+_noremap('n', '<Leader>tb', '<cmd>Telescope buffers<CR>')
+_noremap('n', '<Leader>t?', '<cmd>Telescope keymaps<CR>')
+_noremap('n', '<Leader>ts', ':Telescope grep_string search=')
 
 -- LSP in Telescope
-vim.api.nvim_set_keymap('n', '<Leader>tlds', '<cmd>Telescope lsp_document_symbols<CR>',      {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tldd', '<cmd>Telescope lsp_document_diagnostics<CR>',  {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tlws', '<cmd>Telescope lsp_workspace_symbols<CR>',     {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tlwd', '<cmd>Telescope lsp_workspace_diagnostics<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>tlds', '<cmd>Telescope lsp_document_symbols<CR>')
+_noremap('n', '<Leader>tldd', '<cmd>Telescope lsp_document_diagnostics<CR>')
+_noremap('n', '<Leader>tlws', '<cmd>Telescope lsp_workspace_symbols<CR>')
+_noremap('n', '<Leader>tlwd', '<cmd>Telescope lsp_workspace_diagnostics<CR>')
 
 -- Open quickfix list (you can send any search result from telescope to quickfix list
 -- by pressing Ctrl + q while Telescope is open)
 -- There are 2 ways to fill quickfix list:
 --  - using any Telescope calls
 --  - using vimgrep (ex: vimgrep /def/g ./*.py    -> search all 'def' in *.py file in current dir)
-vim.api.nvim_set_keymap('n', '<Leader>tqf', '<cmd>Telescope quickfix<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>tqf', '<cmd>Telescope quickfix<CR>')
 
 -- Git in Telescope
-vim.api.nvim_set_keymap('n', '<Leader>tgs', '<cmd>Telescope git_status<CR>',   {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tgc', '<cmd>Telescope git_commits<CR>',  {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tgf', '<cmd>Telescope git_files<CR>',    {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<Leader>tgb', '<cmd>Telescope git_branches<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>tgs', '<cmd>Telescope git_status<CR>')
+_noremap('n', '<Leader>tgc', '<cmd>Telescope git_commits<CR>')
+_noremap('n', '<Leader>tgf', '<cmd>Telescope git_files<CR>')
+_noremap('n', '<Leader>tgb', '<cmd>Telescope git_branches<CR>')
 
 -- Quick open neovim config files
-vim.api.nvim_set_keymap('n', '<Leader>tinit', '<cmd>Telescope find_files cwd=~/.config/nvim/<CR>', {noremap = true, silent = false})
+_noremap('n', '<Leader>tinit', '<cmd>Telescope find_files cwd=~/.config/nvim/<CR>')

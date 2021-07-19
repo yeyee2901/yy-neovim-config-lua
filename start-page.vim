@@ -4,7 +4,7 @@ endfun
 function Start()
         " Don't run if: we have commandline arguments, we don't have an empty
         " buffer, if we've not invoked as vim or gvim, or if we'e start in insert mode
-        if argc() || line2byte('$') != -1 "|| v:progname !~? '^[-gmnq]\=nvim\=x\=\%[\.exe]$' || &insertmode
+        if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=nvim\=x\=\%[\.exe]$' || &insertmode
                 return
         endif
 

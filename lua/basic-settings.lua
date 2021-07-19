@@ -39,7 +39,7 @@ vim.g.vimsyn_embed      = 'l'
 
 
 -- Sadly, Lua doesn't have api yet for autocmd, we have to hard code it using
--- vim.cmd()   :(
+-- vim.cmd()  :(
 vim.cmd('autocmd BufWinEnter,InsertLeave * highlight CursorLine guibg=#353b47')
 vim.cmd('autocmd InsertEnter * highlight CursorLine guibg=#15181f')
 

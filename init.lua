@@ -91,11 +91,13 @@
 --    3. Vimls		: 'npm i -g vim-language-server'
 --    4. Bashls		: 'npm i -g bash-language-server'
 --                         'npm i -g bash-language-server vim-language-server'
+--    5. Sumneko-Lua : Follow the installation guide from here, install it to your ~/bin :
+--                      https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 
 -- Load modules
 require('basic-settings')
 
--- Load plugins using packer
+-- Load plugins using 'packer'
 require('packer-plugins-setup')
 
 -- Setup themes
