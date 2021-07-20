@@ -12,19 +12,16 @@
 --vim.cmd('colorscheme monokai')
 --vim.opt.background = 'dark'
 
-
 -- Aurora theme
 vim.cmd('colorscheme aurora')
 vim.g.airline_theme = 'base16_dracula'
-
-
 
 -- Rainbow bracket colorizer
 vim.g.rainbow_active = true
 
 -- Vim - Airline
-vim.cmd('let g:airline#extensions#tabline#enabled = 1')
-vim.cmd('let g:airline#extensions#tabline#formatter = "unique_tail"')
-vim.cmd('let g:airline#extensions#tabline#show_tabs = 1')
-vim.cmd('let g:airline#extensions#tabline#show_buffers = 0')
-vim.cmd('let g:airline#extensions#tabline#show_splits = 0')
+vim.g['airline#extensions#tabline#enabled']       = true
+vim.g['airline#extensions#tabline#formatter']     = 'unique_tail'
+vim.g['airline#extensions#tabline#show_tabs']     = true
+vim.g['airline#extensions#tabline#show_buffers']  = false
+vim.g['airline#extensions#tabline#show_splits']   = false

@@ -59,4 +59,5 @@ require('packer').startup(
 
 if new_install then 
   vim.cmd('PackerUpdate') 
+  vim.cmd('TSUpdate')
 end

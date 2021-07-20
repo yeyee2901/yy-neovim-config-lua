@@ -29,11 +29,10 @@ require('compe').setup {
   };
 }
 
--- Disable annoying diagnostic error messages by default
 local default_settings = {
-        virtual_text = false,
+        virtual_text = true,
         underline = false,
-        signs = false,
+        signs = true,
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

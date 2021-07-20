@@ -33,7 +33,7 @@ require('lspconfig').clangd.setup(LSP_signature_setup)
 require('lspconfig').vimls.setup{}
 
 -- sudo npm install -g bash-language-server
-require('lspconfig').bashls.setup{}
+require('lspconfig').bashls.setup{ filetypes = {'sh', 'zsh'} }
 
 -- sudo npm install -g pyright
 require('lspconfig').pyright.setup(LSP_signature_setup)
@@ -42,9 +42,10 @@ require('lspconfig').pyright.setup(LSP_signature_setup)
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 -- Because I install Lua Language manually, We have to do some setup here
 local OS_name
-if vim.fn.has('unix') == 1      then OS_name = 'Linux'
-elseif vim.fn.has('mac') == 1   then OS_name = 'macOS'
-elseif vim.fn.has('win32') == 1 then OS_name = 'Windows'
+if      vim.fn.has('unix') == 1  then OS_name = 'Linux'
+elseif  vim.fn.has('mac') == 1   then OS_name = 'macOS'
+elseif  vim.fn.has('win32') == 1 then OS_name = 'Windows'
+
 else print("What do you use, my man?")
 end
 
@@ -97,4 +98,3 @@ require('lspconfig').sumneko_lua.setup {
                 require('lsp_signature').on_attach()
         end
 }
-

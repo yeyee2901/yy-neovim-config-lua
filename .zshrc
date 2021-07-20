@@ -5,7 +5,7 @@ export NEOVIM_CONF=$HOME/.config/nvim/
 export PATH=$PATH:$HOME/bin:/usr/local/bin:$HOME/.config/nvim/plugged/:$HOME/.local/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/yeyee2901/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -33,9 +33,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='neovim5'
+  export EDITOR='nvim'
 else
-  export EDITOR='neovim5'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -45,7 +45,7 @@ alias la="ls -lah"
 alias cls="clear ; la"
 
 # FFF file manager specific setups (show hidden files & use neovim 0.5.0 for default editor)
-export EDITOR="$HOME/bin/neovim5"
+export EDITOR="nvim"
 export FFF_HIDDEN=1
 
 alias luamake=/home/yeyee2901/bin/lua-language-server/3rd/luamake/luamake

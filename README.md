@@ -58,7 +58,7 @@ otherwise, you can always use link method
 - For Lua language server, it's a bit complicated, but I recommend you following these guide:  
         https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)  
 
-- For my Neovim (particular) config, clone the the lua-language-server repo (^) in your ~/bin directory.
+- For my Neovim (particular) config, clone the the sumneko's lua-language-server repo (^) in your ~/bin directory.
   (IMPORTANT: ~/bin/ must be in $PATH)
         ex: 
         mkdir ~/bin
@@ -80,14 +80,14 @@ This will automatically install 'packer' plugin manager, and install all the plu
 
 4. If it succeeds, then it should automatically install the required plugins!  
 
-5. Try opening any file and either press ' SPACE - t - f ', or running this command in neovim:
+5. Try opening any file and either press ' SPACE-t-f ', or running this command in neovim:
 ```vim
 :Telescope find_files
 ```
-6. If you're not messing up something, you can watch ChrisAtMachine / TJ DeVries videos & livestreams. They provide
+6. If you're messing up something, you can watch ChrisAtMachine / TJ DeVries videos & livestreams. They provide
 clear explanation on these setups. Regarding LSP setups, do watch ChrisAtMachine's video: https://www.youtube.com/watch?v=NXysez2vS4Q&t=915s
 
-7. There are also instructions on the init.vim file. Be sure to read it~
+7. There are also instructions on the init.lua file. Be sure to read it~
   
 &nbsp;  
 # SNAPSHOTS
@@ -110,7 +110,7 @@ vimgrep /def/g ./*.py
 ```
 ![image](https://user-images.githubusercontent.com/55247343/126036409-48e9a1e1-c34b-4f4f-8773-88ea6cd2fba3.png)
 
-Telescope the diagnostics! (for current file only, the workspace diagnostics seems buggy) ( SPACE - t - d )
+Telescope the diagnostics! (for current document only, the workspace diagnostics seems buggy) ( SPACE-t-l-d-d)
 ![image](https://user-images.githubusercontent.com/55247343/126036469-0acd7640-fb59-40df-bba2-d02549825672.png)
 
 Forgot keymap / shortcuts? No Problemo! ( SPACE-t-? )
@@ -122,7 +122,8 @@ Forgot keymap / shortcuts? No Problemo! ( SPACE-t-? )
 &nbsp;  
 
 # NOTES
-I do not own any of the plugins, softwares, etc. I just arranged them to be suitable for my development needs. Feel free to download this repo and try exploring with Neovim >= 0.5.0! HAPPY VIMMING!!  
+I do not own any of the plugins, softwares, etc. I just arranged them to be suitable for my development needs,
+mainly for embedded systems and a little bit of Python. Feel free to download this repo and try exploring with Neovim >= 0.5.0! HAPPY VIMMING!!  
   
 Tested On:
 1. Pop! OS 21.04 (debian based)
