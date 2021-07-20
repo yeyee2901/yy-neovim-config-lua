@@ -1,4 +1,4 @@
--- Ensure that packer is always installed in 
+-- Ensure that packer is always installed in
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
@@ -27,7 +27,7 @@ require('packer').startup(
     -- Floaterm for terminal integration
     use {'voldikss/vim-floaterm'}
 
-    --Themes choose only one 
+    --Themes choose only one
     use {'vim-airline/vim-airline'}
     use {'vim-airline/vim-airline-themes'}
 --    use {'tanvirtin/monokai.nvim'}
@@ -35,10 +35,10 @@ require('packer').startup(
 --    use {'ayu-theme/ayu-vim'}
 --    use {'folke/tokyonight.nvim'}
     use {'ray-x/aurora'}
-                                     
+
     --Rainbow - Bracket pair colorizer
     use {'luochen1990/rainbow'}
-                                     
+
     --CMake Integration
     use {'cdelledonne/vim-cmake'}
 
@@ -48,7 +48,7 @@ require('packer').startup(
     use {'ray-x/lsp_signature.nvim'}
 
     -- Tree Sitter
-    use {'nvim-treesitter/nvim-treesitter'}
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- Telescopeeeeeee
     use {'nvim-lua/popup.nvim'}
@@ -57,7 +57,6 @@ require('packer').startup(
   end
 )
 
-if new_install then 
-  vim.cmd('PackerUpdate') 
-  vim.cmd('TSUpdate')
+if new_install then
+  vim.cmd('PackerUpdate')
 end
