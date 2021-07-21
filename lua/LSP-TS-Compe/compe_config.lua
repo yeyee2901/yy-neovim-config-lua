@@ -32,7 +32,7 @@ require('compe').setup {
 local default_settings = {
         virtual_text = true,
         underline = false,
-        signs = true,
+        signs = false,
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

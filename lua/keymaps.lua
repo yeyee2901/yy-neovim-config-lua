@@ -35,7 +35,7 @@ _noremap_silent('v', '<M-k>',        ':m-2<CR>gv') -- in visual line, move line 
 _noremap_silent('v', '<M-j>',        ':m \'>+1<CR>gv') -- in visual line, move line down
                                                        -- '>  = last char of selection
 
--- append to all selected line via 
+-- append to all selected line
 -- (intended to be used with VISUAL-BLOCK mode only)
 _noremap('v', 'aa', '$<S-a>')
 
@@ -110,7 +110,11 @@ _noremap('n', '<Leader>t?', '<cmd>Telescope keymaps<CR>')
 _noremap('n', '<Leader>tsl', '<cmd>Telescope live_grep<CR>')
 _noremap('n', '<Leader>tsg', ':Telescope grep_string search=')
 
+-- Query all function names, vars, and ohter symbols from Tree Sitter queries
+_noremap('n', '<Leader>tt', '<cmd>lua require("telescope.builtin").treesitter()<CR>')
+
 -- LSP in Telescope
+_noremap('n', '<Leader>tlgd',   '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>')
 _noremap('n', '<Leader>tlds',   '<cmd>Telescope lsp_document_symbols<CR>')
 _noremap('n', '<Leader>tldd',   '<cmd>Telescope lsp_document_diagnostics<CR>')
 _noremap('n', '<Leader>tlws',   ':Telescope lsp_workspace_symbols query=')
@@ -128,12 +132,13 @@ _noremap('n', '<Leader>tqf', '<cmd>Telescope quickfix<CR>')
 _noremap('n', '<Leader>tgs', '<cmd>Telescope git_status<CR>')
 _noremap('n', '<Leader>tgc', '<cmd>Telescope git_commits<CR>')
 _noremap('n', '<Leader>tgf', '<cmd>Telescope git_files<CR>')
-_noremap('n', '<Leader>tgb', '<cmd>Telescope git_branches<CR>')
+_noremap('n', '<Leader>tgbb', '<cmd>Telescope git_branches<CR>')
+_noremap('n', '<Leader>tgbc', '<cmd>Telescope git_bcommits<CR>')
 
 
--- TELESCOPE QUICK SHORTCUTS (for Quick Editing)
--- Open neovim config directory
-_noremap('n', '<Leader>tinit', '<cmd>lua require("neo-telescope.wrapper").tele_open_config()<CR>')
+-- TELESCOPE WRAPPER
+-- open neovim config
+_noremap('n', '<Leader>tinit', '<cmd>lua require("my-telescope.wrapper").tele_open_config()<CR>')
 
--- Quick open LSP file config (packer)
-_noremap('n', '<Leader>lsp', '<cmd>lua require("neo-telescope.wrapper").tele_open_lsp_dir()<CR>')
+-- Quick open LSP file config (using packer default install path)
+_noremap('n', '<Leader>lsp', '<cmd>lua require("my-telescope.wrapper").tele_open_lsp_dir()<CR>')

@@ -5,10 +5,7 @@ function Start()
                 return
         endif
 
-        " Start a new buffer ...
         enew
-
-        " ... and set some options for it
         setlocal
                 \ bufhidden=wipe
                 \ buftype=nofile
@@ -20,44 +17,27 @@ function Start()
                 \ noswapfile
                 \ norelativenumber
 
+        call append('$', "")
+        for line in split(system("cat ~/.config/nvim/start-art$(($RANDOM % 4 + 1)).txt"), '\n')
+            call append('$', '        ' . l:line)
+        endfor
 
-        " Now we can just write to the buffer, whatever you want.
-        call append('$', '                        |                    YYYY                     YYYY                                         |')
-        call append('$', '                        |                    YYYY                     YYYY                                         |')
-        call append('$', '                        |                    YYYY                     YYYY                                         |')
-        call append('$', '                        |                    YYYY                     YYYY                                         |')
-        call append('$', '                        |                    YYYY                     YYYY                                         |')
-        call append('$', '                        |                    YYYY                     YYYY                                         |')
-        call append('$', '                        |                    YYYY                     YYYY                                         |')
-        call append('$', '                        |                    YYYY                     YYYY      22222222222                        |')
-        call append('$', '                        |                     YYYYY                   YYYY    222         222                      |')
-        call append('$', '                        |                       YYYYYYYYYYYYYYYYYYYYYYYYYY   222           222                     |')
-        call append('$', '                        |                         YYYYYYYYYYYYYYYYYYYYYYYY                 222                     |')
-        call append('$', '                        |                                            YYYY                222                       |')
-        call append('$', '                        |                                            YYYY               222                        |')
-        call append('$', '                        |                                            YYYY             222                          |')
-        call append('$', '                        |                                            YYYY           222                            |')
-        call append('$', '                        |                                            YYYY         222                              |')
-        call append('$', '                        |                                            YYYY        222                               |')
-        call append('$', '                        |                     YYY                  YYYY        222                                 |')
-        call append('$', '                        |                      YYY                YYYY       222                                   |')
-        call append('$', '                        |                        YYYYYYYYYYYYYYYYYYY       2222222222222222                        |')
-        call append('$', '                        |                         YYYYYYYYYYYYYYYY         2222222222222222                        |')
-        call append('$', '                        |                                                                                          |')
-        call append('$', '                        |                                                                                          |')
-        call append('$', '                        |                         Configuration by:    yeyee2901 - 2021                            |')
-        call append('$', '                        |                    https://github.com/yeyee2901/yy-neovim-config-lua                     |')
-        call append('$', '                        |                                                                                          |')
-        call append('$', '                        |                                                                                          |')
-        call append('$', '                        |                     [i]                 Enter insert mode                                |')
-        call append('$', '                        |                     [SPACE-f-f]         Open Floaterm file browser                       |')
-        call append('$', '                        |                     [SPACE-t-g-f]       Open Telescope git_files                         |')
-        call append('$', '                        |                     [SPACE-t-i-n-i-t]   Open Telescope for Neovim Config                 |')
-        call append('$', '                        |                     [SPACE-t-?]         List Keymap                                      |')
-        call append('$', '                        |                                                                                          |')
-        call append('$', '                        |                                                                                          |')
-        call append('$', '                        |                                                                                          |')
-        call append('$', '                        |                                                                                          |')
+        let b:display_start = 23
+        while line('$') < b:display_start
+                call append('$', '')
+        endwhile
+
+        call append('$', '                                                  [i]                 Enter insert mode                                ')
+        call append('$', '                                                  [SPACE-f-f]         Open Floaterm file browser                       ')
+        call append('$', '                                                  [SPACE-t-g-f]       Open Telescope git_files                         ')
+        call append('$', '                                                  [SPACE-t-i-n-i-t]   Open Telescope for Neovim Config                 ')
+        call append('$', '                                                  [SPACE-t-?]         List Keymap                                      ')
+        call append('$', '                                                                                                                       ')
+        call append('$', '                                                                                                                       ')
+        call append('$', '                                                  https://github.com/yeyee2901/yy-neovim-config-lua                    ')
+        call append('$', '                                                                                                                       ')
+        call append('$', '                                                                 < YEYEE - 2021 >                                      ')
+        call append('$', '                                                                                                                       ')
 
         " No modifications to this buffer
         setlocal nomodifiable nomodified
