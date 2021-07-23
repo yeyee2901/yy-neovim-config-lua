@@ -55,6 +55,9 @@ require('packer').startup(
     use {'nvim-lua/plenary.nvim'}
     use {'nvim-telescope/telescope.nvim'}
 
+    -- Git it gud
+    use {'tpope/vim-fugitive'}
+
   end
 )
 
