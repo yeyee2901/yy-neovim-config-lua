@@ -105,6 +105,13 @@ _noremap('n', '<Leader>rn',  '<cmd>lua vim.lsp.buf.rename()<CR>')
 _noremap_expr('i', '<Tab>', 'compe#confirm("<Tab>")')
 _noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
 
+-- PLUGIN: fuGITive
+_noremap('n', '<Leader>gb', '<cmd>Gbranch<CR>')
+_noremap('n', '<Leader>gs', '<cmd>G<CR>')
+_noremap('n', '<Leader>gc', ':Gcommit') -- to avoid commit mistake
+_noremap('n', '<Leader>g<Left>', '<cmd>diffget //2<CR>')
+_noremap('n', '<Leader>g<Right>', '<cmd>diffget //3<CR>')
+
 -- PLUGIN: Telescope
 _noremap('n', '<Leader>tc', '<cmd>Telescope commands<CR>')
 _noremap('n', '<Leader>tf', '<cmd>Telescope find_files<CR>')
