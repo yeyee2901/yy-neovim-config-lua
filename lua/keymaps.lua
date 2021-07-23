@@ -100,17 +100,20 @@ _noremap('n', '<Leader>j',  '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 _noremap('n', '<Leader>k',    '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 _noremap('n', '<Leader>rn',  '<cmd>lua vim.lsp.buf.rename()<CR>')
 
-
 -- Snippet & Code completion on TAB press
 _noremap_expr('i', '<Tab>', 'compe#confirm("<Tab>")')
 _noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
 
--- PLUGIN: fuGITive
-_noremap('n', '<Leader>gb', '<cmd>Gbranch<CR>')
-_noremap('n', '<Leader>gs', '<cmd>G<CR>')
-_noremap('n', '<Leader>gc', ':Gcommit') -- to avoid commit mistake
-_noremap('n', '<Leader>g<Left>', '<cmd>diffget //2<CR>')
-_noremap('n', '<Leader>g<Right>', '<cmd>diffget //3<CR>')
+
+-- PLUGIN: fuGITive (the rest are provided by telescope functionality)
+_noremap('n', '<Leader>gs', '<cmd>G<CR>') -- easy staging & commiting edit
+_noremap('n', '<Leader>gc', ':Git commit') -- to avoid commit mistake
+_noremap('n', '<Leader>ga', '<cmd>Git add .<CR>') -- stage all
+
+
+-- for easy merge conflict resolving
+_noremap('n', '<Leader>gh', '<cmd>diffget //2<CR>')
+_noremap('n', '<Leader>gl', '<cmd>diffget //3<CR>')
 
 -- PLUGIN: Telescope
 _noremap('n', '<Leader>tc', '<cmd>Telescope commands<CR>')
