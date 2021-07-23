@@ -21,8 +21,9 @@ require('packer').startup(
   function()
     use {'wbthomason/packer.nvim'}
 
-    -- NERDTree for classic vim :)
-    use {'preservim/nerdtree'}
+    -- Nvim tree > NERDTree, no debate :)
+    use{'kyazdani42/nvim-web-devicons'}
+    use{'kyazdani42/nvim-tree.lua'}
 
     -- Floaterm for terminal integration
     use {'voldikss/vim-floaterm'}
@@ -38,6 +39,9 @@ require('packer').startup(
 
     --Rainbow - Bracket pair colorizer
     use {'luochen1990/rainbow'}
+
+    -- Colorizer for color codes
+    use {'norcalli/nvim-colorizer.lua'}
 
     --CMake Integration
     use {'cdelledonne/vim-cmake'}
@@ -57,6 +61,7 @@ require('packer').startup(
 
     -- Git it gud
     use {'tpope/vim-fugitive'}
+
 
   end
 )

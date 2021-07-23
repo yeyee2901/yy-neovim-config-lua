@@ -82,8 +82,10 @@ _noremap('n', '<Leader>cg', '<cmd>CMakeClean<CR><cmd>CMakeGenerate<CR>')
 _noremap('n', '<Leader>cb', '<cmd>CMakeBuild<CR>')
 _noremap('n', '<Leader>cq', '<cmd>CMakeClose<CR>')
 
--- PLUGIN: NERDTree
-_noremap('n', '<Leader>nt', '<cmd>NERDTreeToggle<CR>')
+-- PLUGIN: Nvim-tree
+_noremap('n', '<Leader>nt', '<cmd>NvimTreeToggle<CR>')
+_noremap('n', '<Leader>nr', '<cmd>NvimTreeRefresh<CR>')
+
 
 -- PLUGIN: Floaterm
 _noremap('n', '<Leader>ft', '<cmd>FloatermNew<CR>')

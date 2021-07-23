@@ -12,6 +12,7 @@ local my_options = {
   smartindent     = true,
   smarttab        = true,
   wrap            = false,
+  ignorecase      = true,
   timeout         = true,
   timeoutlen      = 2000,
   hlsearch        = false,

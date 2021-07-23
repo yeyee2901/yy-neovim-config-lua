@@ -35,9 +35,7 @@ function Start()
         call append('$', '                                                                                                                       ')
         call append('$', '                                                                                                                       ')
         call append('$', '                                                  https://github.com/yeyee2901/yy-neovim-config-lua                    ')
-        call append('$', '                                                                                                                       ')
         call append('$', '                                                                 < YEYEE - 2021 >                                      ')
-        call append('$', '                                                                                                                       ')
 
         " No modifications to this buffer
         setlocal nomodifiable nomodified

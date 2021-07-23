@@ -98,7 +98,6 @@ require('basic-settings')
 require('packer-plugins-setup')
 
 require('user-plugin-settings.setup-themes')
-require('user-plugin-settings.setup-nerdtree')
 require('user-plugin-settings.setup-floaterm-fff')
 require('user-plugin-settings.setup-vim_cmake')
 

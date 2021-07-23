@@ -23,6 +23,9 @@ vim.g.airline_theme = 'base16_dracula'
 -- Rainbow bracket colorizer
 vim.g.rainbow_active = true
 
+-- Vim colorizer
+require('colorizer').setup()
+
 -- Vim - Airline
 vim.g['airline#extensions#tabline#enabled']       = true
 vim.g['airline#extensions#tabline#formatter']     = 'unique_tail'
