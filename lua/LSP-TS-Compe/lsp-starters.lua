@@ -10,16 +10,47 @@
 --      require('lspconfig').<language_server>.setup{}
 --
 -- Or if you want to enable the LSP_signature_setup for better code hover documentation:
---      
+--
 --      require('lspconfig').<language_server>.setup(LSP_signature_setup)
 --
--- The name of <language_server> must match with the one available at file CONFIG.md 
+-- The name of <language_server> must match with the one available at file CONFIG.md
 
 
 -- Attach LSP signature to enable better function documentation
 local LSP_signature_setup = {
 	on_attach = function(client, bufnr)
 		require('lsp_signature').on_attach()
+
+    -- Big thanks to Takuya Matsuyama from Japan for providing this icon setup.
+    -- He provided amazing video on setting up LSP on Neovim 0.5.0.
+    -- https://blog.inkdrop.info/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
+    require('vim.lsp.protocol').CompletionItemKind = {
+    '', -- Text
+    '', -- Method
+    '', -- Function
+    '', -- Constructor
+    '', -- Field
+    '', -- Variable
+    '', -- Class
+    'ﰮ', -- Interface
+    '', -- Module
+    '', -- Property
+    '', -- Unit
+    '', -- Value
+    '', -- Enum
+    '', -- Keyword
+    '﬌', -- Snippet
+    '', -- Color
+    '', -- File
+    '', -- Reference
+    '', -- Folder
+    '', -- EnumMember
+    '', -- Constant
+    '', -- Struct
+    '', -- Event
+    'OP', -- Operator
+    '', -- TypeParameter
+  }
 	end
 }
 
@@ -52,11 +83,11 @@ require('lspconfig').pyright.setup(LSP_signature_setup)
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 -- Because I install Lua Language manually, We have to do some setup here
 local OS_name
-if      vim.fn.has('unix') == 1 then 
+if      vim.fn.has('unix') == 1 then
   OS_name = 'Linux'
-elseif  vim.fn.has('mac') == 1 then 
+elseif  vim.fn.has('mac') == 1 then
   OS_name = 'macOS'
-elseif  vim.fn.has('win32') == 1 then 
+elseif  vim.fn.has('win32') == 1 then
   OS_name = 'Windows'
 else
   print("What do you use, my man?")
@@ -65,7 +96,7 @@ end
 -- Get the Lua Language Server path
 local HOME_path = os.getenv('HOME')
 local sumneko_root_path = HOME_path .. '/bin/lua-language-server'
-local sumneko_binary_path = sumneko_root_path .. '/bin/' .. OS_name .. '/lua-language-server' 
+local sumneko_binary_path = sumneko_root_path .. '/bin/' .. OS_name .. '/lua-language-server'
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
@@ -106,8 +137,7 @@ require('lspconfig').sumneko_lua.setup {
                 }
         },
 
-        -- On attaching the language server, We want to call lsp_signature
-        on_attach = function(client, bufnr)
-                require('lsp_signature').on_attach()
-        end
+        -- On attaching the language server, We to also attach lsp_signature
+        on_attach = LSP_signature_setup.on_attach
 }
+
