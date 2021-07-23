@@ -16,7 +16,10 @@
 -- The name of <language_server> must match with the one available at file CONFIG.md
 
 
--- Attach LSP signature to enable better function documentation
+-- Attach Custom functionality on LSP startup:
+--   1. LSP signature to enable better function documentation
+--   2. Completion icons (functions, classes, etc)
+--   3. Auto formatting on buffer save
 local LSP_signature_setup = {
 	on_attach = function(client, bufnr)
 		require('lsp_signature').on_attach()
@@ -51,43 +54,45 @@ local LSP_signature_setup = {
     'OP', -- Operator
     '', -- TypeParameter
   }
-	end
-}
 
--- pip install cmake-language-server
-require('lspconfig').cmake.setup{}
+  -- autoformat on save
+  if client.resolved_capabilities.document_formatting then
+      vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
+  end
+
+  end --end func
+}
 
 -- sudo apt install clangd
 require('lspconfig').clangd.setup(LSP_signature_setup)
 
 -- sudo npm install -g vim-language-server
-require('lspconfig').vimls.setup{}
-
--- sudo npm install -g bash-language-server
-require('lspconfig').bashls.setup{ filetypes = {'sh', 'zsh'} }
+require('lspconfig').vimls.setup(LSP_signature_setup)
 
 -- sudo npm install -g pyright
 require('lspconfig').pyright.setup(LSP_signature_setup)
 
--- sudo apt install ccls (somewhat slower than clangd)
---require('lspconfig').ccls.setup{
---  root_dir = function(fname)
---    return util.root_pattern('.ccls', 'compile_flags.txt', '.git')(fname) or util.path.dirname(fname)
---  end,
---
---  on_attach = function(client, bufnr)
---    require('lsp_signature').on_attach()
---  end
---}
+-- sudo npm install -g bash-language-server
+require('lspconfig').bashls.setup{ 
+  filetypes = {'sh', 'zsh'},
+  on_attach = LSP_signature_setup.on_attach
+}
+
+-- pip install cmake-language-server
+require('lspconfig').cmake.setup{
+  on_attach = LSP_signature_setup.on_attach
+}
+
+
 
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 -- Because I install Lua Language manually, We have to do some setup here
 local OS_name
-if      vim.fn.has('unix') == 1 then
+if vim.fn.has('unix') == 1 then
   OS_name = 'Linux'
-elseif  vim.fn.has('mac') == 1 then
+elseif vim.fn.has('mac') == 1 then
   OS_name = 'macOS'
-elseif  vim.fn.has('win32') == 1 then
+elseif vim.fn.has('win32') == 1 then
   OS_name = 'Windows'
 else
   print("What do you use, my man?")
@@ -104,40 +109,40 @@ table.insert(runtime_path, 'lua/?/init.lua')
 
 
 require('lspconfig').sumneko_lua.setup {
-        cmd = {
-                sumneko_binary_path,
-                '-E',
-                sumneko_root_path .. '/main.lua'
-        };
+  cmd = {
+    sumneko_binary_path,
+    '-E',
+    sumneko_root_path .. '/main.lua'
+  };
 
-        settings = {
+  settings = {
 
-                -- Tell which version of LuaJIT and where it is located
-                runtime = {
-                        version = 'LuaJIT',
+    -- Tell which version of LuaJIT and where it is located
+    runtime = {
+      version = 'LuaJIT',
 
-                        path = runtime_path,
-                },
+      path = runtime_path,
+    },
 
-                -- Get the language server to understand 'vim' global
-                diagnostics = {
-                        globals = {
-                                'vim',
-                        }
-                },
+    -- Get the language server to understand 'vim' global
+    diagnostics = {
+      globals = {
+              'vim',
+      }
+    },
 
-                -- Tell the Lua language server where is Neovim runtime files
-                workspace = {
-                        library = vim.api.nvim_get_runtime_file('', true),
-                },
+    -- Tell the Lua language server where is Neovim runtime files
+    workspace = {
+      library = vim.api.nvim_get_runtime_file('', true),
+    },
 
-                -- Disable sending debug data
-                telemetry = {
-                        enable = false,
-                }
-        },
+    -- Disable sending debug data
+    telemetry = {
+      enable = false,
+    }
+  },
 
-        -- On attaching the language server, We to also attach lsp_signature
-        on_attach = LSP_signature_setup.on_attach
+  -- On attaching the language server, We to also attach lsp_signature
+  on_attach = LSP_signature_setup.on_attach
 }
 

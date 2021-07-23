@@ -132,8 +132,6 @@ _noremap('n', '<Leader>tsl',
 _noremap('n', '<Leader>tt', '<cmd>lua require("telescope.builtin").treesitter()<CR>')
 
 -- LSP in Telescope
-_noremap('n', '<Leader>tlgd',   '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>')
-_noremap('n', '<Leader>tlr',    '<cmd>lua require("telescope.builtin").lsp_references()<CR>')
 _noremap('n', '<Leader>tlds',   '<cmd>Telescope lsp_document_symbols<CR>')
 _noremap('n', '<Leader>tldd',   '<cmd>Telescope lsp_document_diagnostics<CR>')
 _noremap('n', '<Leader>tlws',   ':Telescope lsp_workspace_symbols query=')
@@ -142,6 +140,10 @@ _noremap('n', '<Leader>tlwd',   '<cmd>Telescope lsp_workspace_diagnostics<CR>')
 _noremap('n', '<Leader>tla',
   '<cmd>lua require("telescope.builtin").lsp_range_code_actions( require("telescope.themes").get_dropdown() )<CR>'
 )
+_noremap('n', '<Leader>tlgd',   
+  '<cmd>lua require("telescope.builtin").lsp_definitions( require("telescope.themes").get_dropdown())<CR>')
+_noremap('n', '<Leader>tlr',   
+  '<cmd>lua require("telescope.builtin").lsp_references( require("telescope.themes").get_dropdown())<CR>')
 
 -- Open quickfix list (you can send any search result from telescope to quickfix list
 -- by pressing Ctrl + q while Telescope is open)
@@ -174,6 +176,3 @@ _noremap('n', '<Leader>tgcb',
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
 _noremap('n', '<Leader>tinit', '<cmd>lua require("my-telescope.wrapper").tele_open_config()<CR>')
-
--- Quick open LSP file config (using packer default install path)
-_noremap('n', '<Leader>lsp', '<cmd>lua require("my-telescope.wrapper").tele_open_lsp_dir()<CR>')
