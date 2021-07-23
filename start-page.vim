@@ -18,7 +18,7 @@ function Start()
                 \ norelativenumber
 
         call append('$', "")
-        for line in split(system("cat ~/.config/nvim/start-art$(($RANDOM % 4 + 1)).txt"), '\n')
+        for line in split(system("cat ~/.config/nvim/start-art$(($RANDOM % 6 + 1)).txt"), '\n')
             call append('$', '        ' . l:line)
         endfor
 
