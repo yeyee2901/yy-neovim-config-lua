@@ -2,7 +2,7 @@
 local my_options = {
   encoding        = 'utf8',
   relativenumber  = true,
-  clipboard       = 'unnamedplus',
+  clipboard       = 'unnamedplus',    -- Requires xclip (apt)
   mouse           = 'a',
   swapfile        = false,
   tabstop         = 8,
@@ -12,7 +12,7 @@ local my_options = {
   smartindent     = true,
   smarttab        = true,
   wrap            = false,
-  ignorecase      = true,
+  ignorecase      = true,     -- ignore case for search commands
   timeout         = true,
   timeoutlen      = 2000,
   hlsearch        = false,

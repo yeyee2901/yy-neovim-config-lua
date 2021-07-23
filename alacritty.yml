@@ -25,19 +25,19 @@ tabspaces: 4
 
 font:
   normal:
-    family: JetBrains Mono
+    family: JetBrains Mono Nerd Font Mono
     style: Regular
 
   bold:
-    family: JetBrains Mono
-    style: Bold
+    family: JetBrains Mono Nerd Font Mono
+    style: Extra Bold
 
   italic:
-    family: JetBrains Mono
-    style: Italic
+    family: JetBrains Mono Nerd Font Mono
+    style: Medium Italic
 
   # Point size (float able)
-  size: 11.0
+  size: 11.2
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
