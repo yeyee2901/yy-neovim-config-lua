@@ -151,7 +151,9 @@ _noremap('n', '<C-n>', '<cmd>cNext<CR>')
 _noremap('n', '<C-p>', '<cmd>cprevious<CR>')
 
 -- Git in Telescope
-_noremap('n', '<Leader>tgbb', '<cmd>Telescope git_branches<CR>')
+_noremap('n', '<Leader>tgs',
+  '<cmd>lua require("telescope.builtin").git_branches( require("telescope.themes").get_dropdown() )<CR>'
+)
 _noremap('n', '<Leader>tgs',
   '<cmd>lua require("telescope.builtin").git_status( require("telescope.themes").get_dropdown() )<CR>'
 )
