@@ -38,15 +38,28 @@ require('lspconfig').bashls.setup{ filetypes = {'sh', 'zsh'} }
 -- sudo npm install -g pyright
 require('lspconfig').pyright.setup(LSP_signature_setup)
 
+-- sudo apt install ccls (somewhat slower than clangd)
+--require('lspconfig').ccls.setup{
+--  root_dir = function(fname)
+--    return util.root_pattern('.ccls', 'compile_flags.txt', '.git')(fname) or util.path.dirname(fname)
+--  end,
+--
+--  on_attach = function(client, bufnr)
+--    require('lsp_signature').on_attach()
+--  end
+--}
 
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 -- Because I install Lua Language manually, We have to do some setup here
 local OS_name
-if      vim.fn.has('unix') == 1  then OS_name = 'Linux'
-elseif  vim.fn.has('mac') == 1   then OS_name = 'macOS'
-elseif  vim.fn.has('win32') == 1 then OS_name = 'Windows'
-
-else print("What do you use, my man?")
+if      vim.fn.has('unix') == 1 then 
+  OS_name = 'Linux'
+elseif  vim.fn.has('mac') == 1 then 
+  OS_name = 'macOS'
+elseif  vim.fn.has('win32') == 1 then 
+  OS_name = 'Windows'
+else
+  print("What do you use, my man?")
 end
 
 -- Get the Lua Language Server path

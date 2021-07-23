@@ -1,49 +1,34 @@
 -- BASIC SETTINGS -----------------------------------------------
-if vim.fn.has('filetype') then
-    vim.cmd('filetype indent plugin on')
-    vim.cmd('syntax on')
-end
+local my_options = {
+  encoding        = 'utf8',
+  relativenumber  = true,
+  clipboard       = 'unnamedplus',
+  mouse           = 'a',
+  swapfile        = false,
+  tabstop         = 8,
+  softtabstop     = 8,
+  shiftwidth      = 8 ,
+  expandtab       = true,
+  smartindent     = true,
+  smarttab        = true,
+  wrap            = false,
+  timeout         = true,
+  timeoutlen      = 2000,
+  hlsearch        = false,
+  hidden          = true,
+  termguicolors   = true,
+  cursorline      = true,
+}
 
--- vim.opt.<field> = set <field>  , field has to match exactly
-vim.opt.encoding        = 'utf8'
-vim.opt.relativenumber  = true
-vim.opt.clipboard       = 'unnamedplus'
-vim.opt.mouse           = 'a'
-vim.opt.swapfile        = false
+-- Allow Lua syntax in vimscripts ('l' as in lua)
+vim.g.vimsyn_embed = 'l'
 
--- SPACING & TAB width, tab will be expanded to space
-vim.opt.tabstop         = 8
-vim.opt.softtabstop     = 8
-vim.opt.shiftwidth      = 8 
-vim.opt.expandtab       = true
-vim.opt.smartindent     = true
-vim.opt.smarttab        = true
-vim.opt.wrap            = false
+vim.cmd('filetype indent plugin on')
+vim.cmd('syntax on')
 
--- For slow hand / slow typers like me (timeout in milli seconds)
-vim.opt.timeout         = true
-vim.opt.timeoutlen      = 2000
-
--- Disable by default, you can toggle with Shift + H
-vim.opt.hlsearch        = false
-
--- Hide buffers, required for multi buffer navigation
-vim.opt.hidden          = true
-
--- Cursor line for easy line tracking
-vim.opt.termguicolors   = true
-vim.opt.cursorline      = true
-
--- Enable Lua syntax highlighting in vimscript files
-vim.g.vimsyn_embed      = 'l'
-
-
--- Sadly, Lua doesn't have api yet for autocmd, we have to hard code it using
--- vim.cmd()  :(
 vim.cmd('autocmd BufWinEnter,InsertLeave * highlight CursorLine guibg=#353b47')
 vim.cmd('autocmd InsertEnter * highlight CursorLine guibg=#15181f')
 
--- Set tab-spacing for these files'
 vim.cmd('autocmd FileType php,javascript,html,css,lua set tabstop=2')
 vim.cmd('autocmd FileType php,javascript,html,css,lua set softtabstop=2')
 vim.cmd('autocmd FileType php,javascript,html,css,lua set shiftwidth=2')
@@ -52,8 +37,7 @@ vim.cmd('autocmd FileType c,cpp,python set tabstop=4')
 vim.cmd('autocmd FileType c,cpp,python set softtabstop=4')
 vim.cmd('autocmd FileType c,cpp,python set shiftwidth=4')
 
-
--- Debug Message
-if vim.g.load_module_message then
-        print('[LOAD] basic-settings.lua')
+-- set all options
+for option,value in pairs(my_options) do
+  vim.o[option] = value
 end

@@ -30,10 +30,10 @@ require('packer').startup(
     --Themes choose only one
     use {'vim-airline/vim-airline'}
     use {'vim-airline/vim-airline-themes'}
---    use {'tanvirtin/monokai.nvim'}
---    use {'tomasiser/vim-code-dark'}
---    use {'ayu-theme/ayu-vim'}
---    use {'folke/tokyonight.nvim'}
+    use {'tanvirtin/monokai.nvim'}
+    use {'tomasiser/vim-code-dark'}
+    use {'ayu-theme/ayu-vim'}
+    use {'folke/tokyonight.nvim'}
     use {'ray-x/aurora'}
 
     --Rainbow - Bracket pair colorizer
@@ -54,6 +54,7 @@ require('packer').startup(
     use {'nvim-lua/popup.nvim'}
     use {'nvim-lua/plenary.nvim'}
     use {'nvim-telescope/telescope.nvim'}
+
   end
 )
 

@@ -7,6 +7,10 @@
 --vim.cmd('colorscheme codedark')
 --vim.g.air_line_theme = 'codedark'
 
+-- Ayu Theme
+--vim.cmd('let ayucolor = "mirage"')
+--vim.cmd('colorscheme ayu')
+
 -- Monokai        (Sublime Text)
 --require('monokai')
 --vim.cmd('colorscheme monokai')

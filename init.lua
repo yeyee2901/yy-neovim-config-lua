@@ -1,26 +1,26 @@
---						
--- YYYY                     YYYY
--- YYYY                     YYYY		
--- YYYY                     YYYY
--- YYYY                     YYYY	
+--
 -- YYYY                     YYYY
 -- YYYY                     YYYY
 -- YYYY                     YYYY
--- YYYY                     YYYY      22222222222		
+-- YYYY                     YYYY
+-- YYYY                     YYYY
+-- YYYY                     YYYY
+-- YYYY                     YYYY
+-- YYYY                     YYYY      22222222222
 --  YYYYY                   YYYY    222         222
---    YYYYYYYYYYYYYYYYYYYYYYYYYY   222           222		
+--    YYYYYYYYYYYYYYYYYYYYYYYYYY   222           222
 --      YYYYYYYYYYYYYYYYYYYYYYYY                 222
---                         YYYY                222		
+--                         YYYY                222
 --                         YYYY               222
---                         YYYY             222			
+--                         YYYY             222
 --                         YYYY           222
---                         YYYY         222				
+--                         YYYY         222
 --                         YYYY        222
---  YYY                  YYYY        222					
+--  YYY                  YYYY        222
 --   YYY                YYYY       222
---     YYYYYYYYYYYYYYYYYYY       2222222222222222		
+--     YYYYYYYYYYYYYYYYYYY       2222222222222222
 --      YYYYYYYYYYYYYYYY         2222222222222222
---														
+--
 -- FEATURES
 -- 1. Plugin manager: 'Vim-plug'
 -- 2. Native LSP support: Clangd, CMake, Vimls, Bash, Pyright
@@ -65,7 +65,7 @@
 -- CMake (prefix: Leader)
 -- 	- CMake generate : cg
 -- 	- CMake build 	 : cb
--- 	
+--
 -- LSP Autocompletion & Snippet (INSERT mode only)
 -- 	- Go to: 1. Definition          : gd
 -- 		 2. Declaration               : gD
@@ -79,7 +79,7 @@
 -- REQUIREMENTS :
 -- - NeoVim >= 0.5.0	: 'https://github.com/neovim/neovim/releases'
 --   (THIS IS A MUST HAVE, otherwise most of the plugins will not ork)
---   
+--
 -- - Node		: 'sudo apt install node'
 -- - Python >= 3.7	: 'sudo apt install python3'
 -- - pip		: 'sudo apt install python3-pip'
@@ -94,33 +94,21 @@
 --    5. Sumneko-Lua : Follow the installation guide from here, install it to your ~/bin :
 --                      https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 
--- Load modules
 require('basic-settings')
-
--- Load plugins using 'packer'
 require('packer-plugins-setup')
 
--- Setup themes
 require('user-plugin-settings.setup-themes')
-
--- Setup NERDTree
 require('user-plugin-settings.setup-nerdtree')
-
--- Setup Floaterm
 require('user-plugin-settings.setup-floaterm-fff')
-
--- Setup CMake
 require('user-plugin-settings.setup-vim_cmake')
 
--- Setup LSP, Compe, tree-sitter, Telescope
 require('LSP-TS-Compe.compe_config')
+require('LSP-TS-Compe.lsp-diagnostic-setup')
 require('LSP-TS-Compe.lsp-starters')
 require('LSP-TS-Compe.tree-sitter-configs')
 
--- AND lastly,, here's your keymapping...
 require('keymaps')
 
-
--- Launch start up page
+-- For startup page
 vim.cmd('source ~/.config/nvim/start-page.vim')
 vim.cmd('autocmd VimEnter * call Start()')

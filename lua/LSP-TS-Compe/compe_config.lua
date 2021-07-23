@@ -29,15 +29,4 @@ require('compe').setup {
   };
 }
 
-local default_settings = {
-        virtual_text = true,
-        underline = false,
-        signs = false,
-}
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    default_settings
-)
-
 return M
