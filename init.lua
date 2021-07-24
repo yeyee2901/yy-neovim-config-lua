@@ -114,7 +114,7 @@ require('my-themes').set_aurora()
 --require('my-themes').set_monokai()
 --require('my-themes').set_ayu("mirage")
 --require('my-themes').set_tokyonight("night")
---require('user-plugin-settings.setup-themes').set_codedark()
+--require('my-themes').set_codedark()
 
 -- For startup page
 vim.cmd('source ~/.config/nvim/start-page.vim')
