@@ -27,9 +27,6 @@ vim.g.vimsyn_embed = 'l'
 vim.cmd('filetype indent plugin on')
 vim.cmd('syntax on')
 
-vim.cmd('autocmd BufWinEnter,InsertLeave * highlight CursorLine guibg=#353b47')
-vim.cmd('autocmd InsertEnter * highlight CursorLine guibg=#15181f')
-
 vim.cmd('autocmd FileType php,javascript,html,css,lua set tabstop=2')
 vim.cmd('autocmd FileType php,javascript,html,css,lua set softtabstop=2')
 vim.cmd('autocmd FileType php,javascript,html,css,lua set shiftwidth=2')

@@ -2,6 +2,9 @@ local M = {}
 
 -- Tokyonight theme
 M.set_tokyonight = function (variant)
+  if variant == nil then
+    variant = "night"
+  end
   vim.g.tokyonight_style = variant
   vim.cmd('colorscheme tokyonight')
   vim.g.airline_theme = 'base16_dracula'
@@ -16,6 +19,9 @@ end
 
 -- Ayu Theme
 M.set_ayu = function (variant)
+  if variant == nil then
+    variant = "mirage"
+  end
   vim.cmd('let ayucolor = "'..variant..'"')
   vim.cmd('colorscheme ayu')
 end

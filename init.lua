@@ -97,10 +97,11 @@
 require('basic-settings')
 require('packer-plugins-setup')
 
-require('user-plugin-settings.setup-themes')
 require('user-plugin-settings.setup-floaterm-fff')
 require('user-plugin-settings.setup-vim_cmake')
+require('user-plugin-settings.setup-nvim-tree')
 require('user-plugin-settings.setup-telescope')
+require('user-plugin-settings.setup-snippets')
 
 require('LSP-TS-Compe.compe_config')
 require('LSP-TS-Compe.lsp-diagnostic-setup')
@@ -108,6 +109,13 @@ require('LSP-TS-Compe.lsp-starters')
 require('LSP-TS-Compe.tree-sitter-configs')
 
 require('keymaps')
+
+-- Setup theme (airline, main theme, etc)
+require('my-themes').set_aurora()
+--require('my-themes').set_monokai()
+--require('my-themes').set_ayu("mirage")
+--require('my-themes').set_tokyonight("night")
+--require('user-plugin-settings.setup-themes').set_codedark()
 
 -- For startup page
 vim.cmd('source ~/.config/nvim/start-page.vim')

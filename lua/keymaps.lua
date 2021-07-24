@@ -140,9 +140,9 @@ _noremap('n', '<Leader>tlwd',   '<cmd>Telescope lsp_workspace_diagnostics<CR>')
 _noremap('n', '<Leader>tla',
   '<cmd>lua require("telescope.builtin").lsp_range_code_actions( require("telescope.themes").get_dropdown() )<CR>'
 )
-_noremap('n', '<Leader>tlgd',   
+_noremap('n', '<Leader>tlgd',
   '<cmd>lua require("telescope.builtin").lsp_definitions( require("telescope.themes").get_dropdown())<CR>')
-_noremap('n', '<Leader>tlr',   
+_noremap('n', '<Leader>tlr',
   '<cmd>lua require("telescope.builtin").lsp_references( require("telescope.themes").get_dropdown())<CR>')
 
 -- Open quickfix list (you can send any search result from telescope to quickfix list
@@ -151,8 +151,6 @@ _noremap('n', '<Leader>tlr',
 --  - using any Telescope calls
 --  - using vimgrep (ex: vimgrep /def/g ./*.py    -> search all 'def' in *.py file in current dir)
 _noremap('n', '<Leader>tqf', '<cmd>Telescope quickfix<CR>')
-_noremap('n', '<C-n>', '<cmd>cNext<CR>')
-_noremap('n', '<C-p>', '<cmd>cprevious<CR>')
 
 -- Git in Telescope
 _noremap('n', '<Leader>tgs',

@@ -62,6 +62,12 @@ require('packer').startup(
     -- Git it gud
     use {'tpope/vim-fugitive'}
 
+    -- Snippets
+    use {'SirVer/ultisnips'}
+    use {'honza/vim-snippets'}
+
+    -- auto () {} []
+    use {'rstacruz/vim-closer'}
 
   end
 )
