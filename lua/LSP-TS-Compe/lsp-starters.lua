@@ -104,7 +104,8 @@ require('lspconfig').pyright.setup{
 -- sudo npm install -g bash-language-server
 require('lspconfig').bashls.setup{
   filetypes = {'sh', 'zsh'},
-  on_attach = LSP_signature_setup.on_attach
+  on_attach = LSP_signature_setup.on_attach,
+  capabilities = snippet_enable,              -- UltiSnips has snippet for zsh
 }
 
 -- pip install cmake-language-server
@@ -117,7 +118,8 @@ require('lspconfig').html.setup{
   on_attach = LSP_signature_setup.on_attach,
   capabilities = snippet_enable
 }
-require('lspconfig').html.setup{
+
+require('lspconfig').cssls.setup{
   on_attach = LSP_signature_setup.on_attach,
   capabilities = snippet_enable
 }

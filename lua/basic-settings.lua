@@ -5,9 +5,9 @@ local my_options = {
   clipboard       = 'unnamedplus',    -- Requires xclip (apt)
   mouse           = 'a',
   swapfile        = false,
-  tabstop         = 8,
-  softtabstop     = 8,
-  shiftwidth      = 8 ,
+  tabstop         = 4,        -- for PEP standards
+  softtabstop     = 4,        -- for PEP standards
+  shiftwidth      = 4,        -- for PEP standards
   expandtab       = true,
   smartindent     = true,
   smarttab        = true,
@@ -15,7 +15,7 @@ local my_options = {
   ignorecase      = true,     -- ignore case for search commands
   timeout         = true,
   timeoutlen      = 2000,
-  hlsearch        = false,
+  hlsearch        = false,    -- Toggle with <S-h>
   hidden          = true,
   termguicolors   = true,
   cursorline      = true,
@@ -27,13 +27,10 @@ vim.g.vimsyn_embed = 'l'
 vim.cmd('filetype indent plugin on')
 vim.cmd('syntax on')
 
-vim.cmd('autocmd FileType php,javascript,html,css,lua set tabstop=2')
-vim.cmd('autocmd FileType php,javascript,html,css,lua set softtabstop=2')
-vim.cmd('autocmd FileType php,javascript,html,css,lua set shiftwidth=2')
-
-vim.cmd('autocmd FileType c,cpp,python set tabstop=4')
-vim.cmd('autocmd FileType c,cpp,python set softtabstop=4')
-vim.cmd('autocmd FileType c,cpp,python set shiftwidth=4')
+-- I prefer C-like language to be 2 spaces wide
+vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set tabstop=2')
+vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set softtabstop=2')
+vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set shiftwidth=2')
 
 -- set all options
 for option,value in pairs(my_options) do

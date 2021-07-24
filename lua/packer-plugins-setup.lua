@@ -1,10 +1,8 @@
--- Ensure that packer is always installed in
+-- Ensure that packer is always installed in new machine
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
--- Do not change the default installation path
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim' -- Might differ on macOS & winOS
 local new_install = false
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -16,7 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 
--- Insert your packages
 require('packer').startup(
   function()
     use {'wbthomason/packer.nvim'}
