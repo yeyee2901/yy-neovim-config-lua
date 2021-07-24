@@ -109,7 +109,7 @@ _noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
 
 -- PLUGIN: fuGITive (the rest are provided by telescope functionality)
 _noremap('n', '<Leader>gs', '<cmd>G<CR>') -- easy staging & commiting edit
-_noremap('n', '<Leader>gc', ':Git commit') -- to avoid commit mistake
+_noremap('n', '<Leader>gc', '<cmd>Git commit<CR>') -- to avoid commit mistake
 _noremap('n', '<Leader>ga', '<cmd>Git add .<CR>') -- stage all
 
 -- for easy merge conflict resolving

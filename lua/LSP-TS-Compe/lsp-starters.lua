@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 -- If you want to install & activate the LSP, go to:
 --      https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 --
@@ -22,37 +23,54 @@
 --   3. Auto formatting on buffer save
 local LSP_signature_setup = {
 	on_attach = function(client, bufnr)
-		require('lsp_signature').on_attach()
+
+    -- Better pop up documentation
+		require('lsp_signature').on_attach{
+      bind = true,  -- Mandatory for config
+      doc_lines = 5,
+      floating_window = true,
+      fix_pos = false,
+      hint_enable = true,
+      hint_prefix = "<> ",
+      hint_scheme = "String",
+      use_lspsaga = false,
+      hi_parameter = "Search",
+      max_height = 12,
+      max_width = 120,
+      handler_opts = {
+        border = "double" -- single/double/shadow
+      },
+    }
 
     -- Big thanks to Takuya Matsuyama from Japan for providing this icon setup.
     -- He provided amazing video on setting up LSP on Neovim 0.5.0.
     -- https://blog.inkdrop.info/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
     require('vim.lsp.protocol').CompletionItemKind = {
-      '', -- Text
-      '', -- Method
-      '', -- Function
-      '', -- Constructor
-      '', -- Field
-      '', -- Variable
-      '', -- Class
-      'ﰮ', -- Interface
-      '', -- Module
-      '', -- Property
-      '', -- Unit
-      '', -- Value
-      '', -- Enum
-      '', -- Keyword
-      '﬌', -- Snippet
-      '', -- Color
-      '', -- File
-      '', -- Reference
-      '', -- Folder
-      '', -- EnumMember
-      '', -- Constant
-      '', -- Struct
-      '', -- Event
-      'OP', -- Operator
-      '', -- TypeParameter
+      '  Text',
+      '  Method',
+      '  Function',
+      '  Constructor',
+      '  Attribute/Field',
+      '  Var',
+      '  Class',
+      'ﰮ  Interface',
+      '  Module',
+      '  Property',
+      '  Unit',
+      '  Value',
+      '  Enum',
+      '  Keyword',
+      '﬌  Snippet',
+      '  Color',
+      '  File',
+      '  Ref',
+      '  Folder',
+      '  Enum Member',
+      '  Constant',
+      '  Structure',
+      '  Event',
+      'OP Operator',
+      '  TypeParam',
     }
 
     -- autoformat on save
@@ -112,6 +130,12 @@ require('lspconfig').tsserver.setup{
 
 -- npm i -g intelephense
 require('lspconfig').intelephense.setup{
+  on_attach = LSP_signature_setup.on_attach,
+  capabilities = snippet_enable
+}
+
+-- npm i -g sql-language-server
+require('lspconfig').sqlls.setup{
   on_attach = LSP_signature_setup.on_attach,
   capabilities = snippet_enable
 }
