@@ -110,11 +110,11 @@ require('LSP-TS-Compe.tree-sitter-configs')
 require('keymaps')
 
 -- Setup theme (airline, main theme, etc)
-require('my-themes').set_aurora()
---require('my-themes').set_monokai()
---require('my-themes').set_ayu("mirage")
---require('my-themes').set_tokyonight("night")
---require('my-themes').set_codedark()
+require('themes.my-themes').set_aurora()
+--require('themes.my-themes').set_monokai()
+--require('themes.my-themes').set_ayu("mirage")
+--require('themes.my-themes').set_tokyonight("night")
+--require('themes.my-themes').set_codedark()
 
 -- For startup page
 vim.cmd('source ~/.config/nvim/start-page.vim')

@@ -1,7 +1,7 @@
--- Ensure that packer is always installed in new machine
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
+-- Ensure that packer is always installed in new machine
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim' -- Might differ on macOS & winOS
 local new_install = false
 
@@ -9,7 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print('[PACKER] Packer not yet installed')
   print('[PACKER] Now installing packer in' .. install_path)
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
+  execute('packadd packer.nvim')
   new_install = true
 end
 
@@ -26,8 +26,11 @@ require('packer').startup(
     use {'voldikss/vim-floaterm'}
 
     --Themes choose only one
-    use {'vim-airline/vim-airline'}
-    use {'vim-airline/vim-airline-themes'}
+    use {'hoob3rt/lualine.nvim',
+      requires = {
+        'kyazdani42/nvim-tree.lua'
+      }
+    }
     use {'tanvirtin/monokai.nvim'}
     use {'tomasiser/vim-code-dark'}
     use {'ayu-theme/ayu-vim'}
@@ -63,8 +66,9 @@ require('packer').startup(
     use {'SirVer/ultisnips'}
     use {'honza/vim-snippets'}
 
-    -- auto () {} []
+    -- Bracket stuffs
     use {'rstacruz/vim-closer'}
+    use {'tpope/vim-surround'}
 
   end
 )

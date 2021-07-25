@@ -143,7 +143,6 @@ require('lspconfig').sqlls.setup{
 }
 
 
-
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 -- Because I install Lua Language manually, We have to do some setup here
 local OS_name
