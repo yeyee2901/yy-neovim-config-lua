@@ -19,23 +19,23 @@ function Start()
 
         call append('$', "")
         for line in split(system("cat ~/.config/nvim/start-art$(($RANDOM % 6 + 1)).txt"), '\n')
-            call append('$', '        ' . l:line)
+            call append('$', '                                             ' . l:line)
         endfor
 
-        let b:display_start = 23
+        let b:display_start = 19
         while line('$') < b:display_start
                 call append('$', '')
         endwhile
 
-        call append('$', '                                                  [i]                 Enter insert mode                                ')
-        call append('$', '                                                  [SPACE-f-f]         Open Floaterm file browser                       ')
-        call append('$', '                                                  [SPACE-t-g-f]       Open Telescope git_files                         ')
-        call append('$', '                                                  [SPACE-t-i-n-i-t]   Open Telescope for Neovim Config                 ')
-        call append('$', '                                                  [SPACE-t-?]         List Keymap                                      ')
-        call append('$', '                                                                                                                       ')
-        call append('$', '                                                                                                                       ')
-        call append('$', '                                                  https://github.com/yeyee2901/yy-neovim-config-lua                    ')
-        call append('$', '                                                                 < YEYEE - 2021 >                                      ')
+        call append('$', '                                         [i]                 Enter insert mode                                ')
+        call append('$', '                                         [SPACE-f-f]         Open Floaterm file browser                       ')
+        call append('$', '                                         [SPACE-t-g-f]       Open Telescope git_files                         ')
+        call append('$', '                                         [SPACE-t-i-n-i-t]   Open Telescope for Neovim Config                 ')
+        call append('$', '                                         [SPACE-t-?]         List Keymap                                      ')
+        call append('$', '                                                                                                              ')
+        call append('$', '                                                                                                              ')
+        call append('$', '                                          https://github.com/yeyee2901/yy-neovim-config-lua                    ')
+        call append('$', '                                                         < YEYEE - 2021 >                                      ')
 
         " No modifications to this buffer
         setlocal nomodifiable nomodified

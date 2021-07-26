@@ -1,6 +1,6 @@
 local options = {
   nvim_tree_side = 'left',
-  nvim_tree_width = 30,
+  nvim_tree_width = 27,
 
   nvim_tree_ignore = {
     '.git',

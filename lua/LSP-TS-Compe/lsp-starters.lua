@@ -85,6 +85,11 @@ local snippet_enable = vim.lsp.protocol.make_client_capabilities()
 snippet_enable.textDocument.completion.completionItem.snippetSupport = true
 
 
+-- Clone from git, then run 'cargo xtask install --server'
+require('lspconfig').rust_analyzer.setup{
+  on_attach = LSP_signature_setup.on_attach,
+  capabilities = snippet_enable,
+}
 
 -- sudo apt install clangd
 require('lspconfig').clangd.setup{
