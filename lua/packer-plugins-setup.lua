@@ -50,6 +50,7 @@ require('packer').startup(
     use {'neovim/nvim-lspconfig'}
     use {'hrsh7th/nvim-compe'}
     use {'ray-x/lsp_signature.nvim'}
+    use {'glepnir/lspsaga.nvim'}
 
     -- Tree Sitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

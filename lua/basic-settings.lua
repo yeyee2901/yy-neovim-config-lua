@@ -32,6 +32,12 @@ vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set tabstop=2')
 vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set softtabstop=2')
 vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set shiftwidth=2')
 
+-- Code folding,
+-- using *.* to match file types, this is important
+-- so it doesn't conflict with telescope dynamic buffers
+vim.cmd('autocmd BufWinLeave *.* mkview')
+vim.cmd('autocmd BufWinEnter *.* silent! loadview')
+
 -- set all options
 for option,value in pairs(my_options) do
   vim.o[option] = value

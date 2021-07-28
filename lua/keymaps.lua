@@ -31,8 +31,8 @@ _noremap('n', '<Leader>ef', '<cmd>Lexplore<CR>')
 _noremap('v', '<Tab>',        '>gv')
 _noremap('v', '<S-Tab>',      '<gv')
 _noremap('v', '<BS>',         'xgv')
-_noremap_silent('v', '<M-k>',        ':m-2<CR>gv') -- in visual line, move line up
-_noremap_silent('v', '<M-j>',        ':m \'>+1<CR>gv') -- in visual line, move line down
+_noremap_silent('v', '<M-k>', ':m-2<CR>gv') -- in visual line, move line up
+_noremap_silent('v', '<M-j>', ':m \'>+1<CR>gv') -- in visual line, move line down
                                                        -- '>  = last char of selection
 
 -- append to all selected line
@@ -87,30 +87,32 @@ _noremap('n', '<Leader>nt', '<cmd>NvimTreeToggle<CR>')
 _noremap('n', '<Leader>nr', '<cmd>NvimTreeRefresh<CR>')
 
 
--- PLUGIN: Floaterm
-_noremap('n', '<Leader>ft', '<cmd>FloatermNew<CR>')
-_noremap('n', '<Leader>ff', '<cmd>FloatermNew fff<CR>')
+-- PLUGIN: LSP saga (for floating terminal)
+_noremap('n', '<Leader>ft', '<cmd>lua require("lspsaga.floaterm").open_float_terminal()<CR>')
+_noremap('t', '<ESC><ESC>', '<cmd>lua require("lspsaga.floaterm").close_float_terminal()<CR>')
 
--- PLUGIN: LSP helper (I don't know if there's a more proper way, contact me if you know)
+-- PLUGIN: LSP stuffs (I don't know if there's a more proper way, contact me if you know)
+_noremap('n', '<Leader>p',   '<cmd>lua require("lspsaga.provider").preview_definition()<CR>')
 _noremap('n', 'gd',          '<cmd>lua vim.lsp.buf.definition()<CR>')
 _noremap('n', 'gD',          '<cmd>lua vim.lsp.buf.declaration()<CR>')
-_noremap('n', 'K',           '<cmd>lua vim.lsp.buf.hover()<CR>')
-_noremap('n', '<Leader>lr',  '<cmd>lua vim.lsp.buf.references()<CR>')
-_noremap('n', '<Leader>ld',  '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
-_noremap('n', '<Leader>la',  '<cmd>lua vim.lsp.buf.range_code_action()<CR>')
-_noremap('n', '<Leader>j',  '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
-_noremap('n', '<Leader>k',    '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-_noremap('n', '<Leader>rn',  '<cmd>lua vim.lsp.buf.rename()<CR>')
+_noremap('n', 'K',           '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>')
+_noremap('n', '<C-u>',       '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>')
+_noremap('n', '<C-d>',       '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>')
+_noremap('n', '<Leader>lr',  '<cmd>lua require("lspsaga.provider").lsp_finder()<CR>')
+_noremap('n', '<Leader>ld',  '<cmd>lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>')
+_noremap('n', '<Leader>la',  '<cmd>lua require("lspsaga.codeaction").code_action()<CR>')
+_noremap('n', '<Leader>j',   '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_next()<CR>')
+_noremap('n', '<Leader>k',   '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_prev()<CR>')
+_noremap('n', '<Leader>rn',  '<cmd>lua require("lspsaga.rename").rename()<CR>')
 
--- Snippet & Code completion on TAB press
+-- PLUGIN: Nvim-compe (for code completion)
 _noremap_expr('i', '<Tab>', 'compe#confirm("<Tab>")')
 _noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
 
 
 -- PLUGIN: fuGITive (the rest are provided by telescope functionality)
-_noremap('n', '<Leader>gs', '<cmd>G<CR>') -- easy staging & commiting edit
-_noremap('n', '<Leader>gc', '<cmd>Git commit<CR>') -- to avoid commit mistake
-_noremap('n', '<Leader>ga', '<cmd>Git add .<CR>') -- stage all
+_noremap('n', '<Leader>gs', '<cmd>G<CR>')
+_noremap('n', '<Leader>ga', '<cmd>Git add .<CR>')
 
 -- for easy merge conflict resolving
 _noremap('n', '<Leader>gh', '<cmd>diffget //2<CR>')

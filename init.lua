@@ -119,3 +119,4 @@ require('themes.my-themes').set_aurora()
 -- For startup page
 vim.cmd('source ~/.config/nvim/start-page.vim')
 vim.cmd('autocmd VimEnter * call Start()')
+

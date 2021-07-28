@@ -80,10 +80,31 @@ local LSP_signature_setup = {
   end, --end func
 }
 
+-- LSPSaga
+local lsp_saga = require('lspsaga')
+lsp_saga.init_lsp_saga{
+  use_saga_diagnostic_sign = true,
+  error_sign = '',
+  warn_sign = '',
+  hint_sign = '',
+  infor_sign = '',
+  dianostic_header_icon = '  ',
+  code_action_prompt = {
+    enable = false,
+  },
+  border_style = "round",
+}
+
 -- for Ultisnips integration
 local snippet_enable = vim.lsp.protocol.make_client_capabilities()
 snippet_enable.textDocument.completion.completionItem.snippetSupport = true
-
+snippet_enable.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
 
 -- Clone from git, then run 'cargo xtask install --server'
 require('lspconfig').rust_analyzer.setup{

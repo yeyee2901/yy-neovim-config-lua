@@ -14,18 +14,27 @@ require('compe').setup {
   max_abbr_width = 60;
   max_kind_width = 70;
   max_menu_width = 100;
-  documentation = true;
+  documentation = {
+    border = "rounded", -- the border option is the same as `|help nvim_open_win|`
+    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+    max_width = 100,
+    min_width = 60,
+    max_height = math.floor(vim.o.lines * 0.3),
+    min_height = 1,
+  };
+
 
   source = {
     path = true;
     buffer = true;
-    calc = false;
-    vsnip = false;
+    snippets_nvim = true;
+    ultisnips = true;
     nvim_lsp = true;
     nvim_lua = true;
+    calc = false;
+    vsnip = false;
     spell = false;
     tags = false;
-    snippets_nvim = true;
   };
 }
 
