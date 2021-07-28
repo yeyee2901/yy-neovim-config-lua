@@ -9,38 +9,35 @@ require('lualine').setup {
   sections = {
 
     -- A component must be a table, not sequential args
-    lualine_a = {'mode'},
-    lualine_b = {
-      {'branch'},
+    lualine_a = {
       {
-        'diff',
-        colored = true,
-        color_added = '#16f70a',
-        color_modified = '#dff705',
-        color_removed = '#ff00ff',
-        symbols = {added = '+', modified = '~', removed = '-'}
-      },
+        'mode',
+        icon = "im",
+        
+      }
     },
-    lualine_c = {
+    lualine_b = {
+      {
+        'filetype',
+        colored = true
+      },
       {
         'filename',
         path = 1,
       },
+    },
+    lualine_c = {
       {
         'diagnostics',
         sources = {'nvim_lsp'},
         symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
-        color_error = '#ff00ff',
+        color_error = '#ff0000',
         color_warn = '#dff705',
         color_info = '#16f70a',
         color_hint = '#05d8f0',
       },
     },
     lualine_x = {
-      {
-        'filetype',
-        colored = true
-      },
       {
         'encoding'
       },
@@ -60,7 +57,16 @@ require('lualine').setup {
 
   tabline = {
     lualine_a = {'branch'},
-    lualine_b = { { 'filetype', colored = true } },
-    lualine_c = { { 'filename', path = 0 } },
+    lualine_b = {
+      {
+        'diff',
+        colored = true,
+        color_added = '#16f70a',
+        color_modified = '#dff705',
+        color_removed = '#ff0000',
+        symbols = {added = '+', modified = '~', removed = '-'}
+      },
+    },
+    lualine_c = {},
   },
 }

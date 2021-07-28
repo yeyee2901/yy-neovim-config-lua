@@ -22,20 +22,17 @@ require('packer').startup(
     use{'kyazdani42/nvim-web-devicons'}
     use{'kyazdani42/nvim-tree.lua'}
 
-    -- Floaterm for terminal integration
-    use {'voldikss/vim-floaterm'}
-
     --Themes choose only one
-    use {'hoob3rt/lualine.nvim',
-      requires = {
-        'kyazdani42/nvim-tree.lua'
-      }
-    }
     use {'tanvirtin/monokai.nvim'}
     use {'tomasiser/vim-code-dark'}
     use {'ayu-theme/ayu-vim'}
     use {'folke/tokyonight.nvim'}
     use {'ray-x/aurora'}
+    use {'hoob3rt/lualine.nvim',
+      requires = {
+        'kyazdani42/nvim-tree.lua'
+      }
+    }
 
     --Rainbow - Bracket pair colorizer
     use {'luochen1990/rainbow'}
