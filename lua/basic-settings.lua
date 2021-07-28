@@ -19,6 +19,7 @@ local my_options = {
   hidden          = true,
   termguicolors   = true,
   cursorline      = true,
+  inccommand     = 'split',
 }
 
 -- Allow Lua syntax in vimscripts ('l' as in lua)
@@ -28,15 +29,18 @@ vim.cmd('filetype indent plugin on')
 vim.cmd('syntax on')
 
 -- I prefer C-like language to be 2 spaces wide
-vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set tabstop=2')
-vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set softtabstop=2')
-vim.cmd('autocmd FileType c,cpp,php,javascript,html,css,lua set shiftwidth=2')
+vim.cmd [[au FileType c,cpp,php,javascript,html,css,lua set tabstop=2]]
+vim.cmd [[au FileType c,cpp,php,javascript,html,css,lua set softtabstop=2]]
+vim.cmd [[au FileType c,cpp,php,javascript,html,css,lua set shiftwidth=2]]
 
 -- Code folding,
 -- using *.* to match file types, this is important
 -- so it doesn't conflict with telescope dynamic buffers
-vim.cmd('autocmd BufWinLeave *.* mkview')
-vim.cmd('autocmd BufWinEnter *.* silent! loadview')
+vim.cmd [[au BufWinLeave *.* mkview]]
+vim.cmd [[au BufWinEnter *.* silent! loadview]]
+
+-- Highlight on yank
+vim.cmd [[au TextYankPost * lua require('vim.highlight').on_yank({timeout = 40, on_visual = false})]]
 
 -- set all options
 for option,value in pairs(my_options) do

@@ -12,8 +12,8 @@ require('lualine').setup {
     lualine_a = {
       {
         'mode',
-        icon = "im",
-        
+        icon = "Neoim",
+
       }
     },
     lualine_b = {
@@ -64,9 +64,14 @@ require('lualine').setup {
         color_added = '#16f70a',
         color_modified = '#dff705',
         color_removed = '#ff0000',
-        symbols = {added = '+', modified = '~', removed = '-'}
+
+        symbols = {added = ' 🞧 ', modified = ' ᐃ ', removed = ' ⊖ '}
       },
     },
     lualine_c = {},
   },
 }
+
+
+
+

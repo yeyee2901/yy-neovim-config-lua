@@ -34,6 +34,9 @@ require('packer').startup(
       }
     }
 
+    -- Yank highlighting
+--    use {'machakann/vim-highlightedyank'}
+
     --Rainbow - Bracket pair colorizer
     use {'luochen1990/rainbow'}
 
