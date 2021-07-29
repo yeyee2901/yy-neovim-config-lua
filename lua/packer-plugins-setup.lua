@@ -2,7 +2,8 @@ local execute = vim.api.nvim_command
 local fn = vim.fn
 
 -- Ensure that packer is always installed in new machine
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim' -- Might differ on macOS & winOS
+-- Might differ on macOS & winOS
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 local new_install = false
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -28,17 +29,16 @@ require('packer').startup(
     use {'ayu-theme/ayu-vim'}
     use {'folke/tokyonight.nvim'}
     use {'ray-x/aurora'}
+    use {'tjdevries/gruvbuddy.nvim',
+      requires = {
+        'tjdevries/colorbuddy.vim'
+      }
+    }
     use {'hoob3rt/lualine.nvim',
       requires = {
         'kyazdani42/nvim-tree.lua'
       }
     }
-
-    -- Yank highlighting
---    use {'machakann/vim-highlightedyank'}
-
-    --Rainbow - Bracket pair colorizer
-    use {'luochen1990/rainbow'}
 
     -- Colorizer for color codes
     use {'norcalli/nvim-colorizer.lua'}
@@ -59,6 +59,14 @@ require('packer').startup(
     use {'nvim-lua/popup.nvim'}
     use {'nvim-lua/plenary.nvim'}
     use {'nvim-telescope/telescope.nvim'}
+    use {'nvim-telescope/telescope-symbols.nvim'}
+    use {'nvim-telescope/telescope-fzy-native.nvim'}
+    use {
+      'fhill2/telescope-ultisnips.nvim',
+      requires = {
+        'SirVer/ultisnips'
+      }
+    }
 
     -- Git it gud
     use {'tpope/vim-fugitive'}

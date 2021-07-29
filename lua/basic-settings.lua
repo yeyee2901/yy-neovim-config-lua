@@ -41,7 +41,7 @@ vim.cmd ( 'autocmd BufWinLeave *.* mkview' )
 vim.cmd ( 'autocmd BufWinEnter *.* silent! loadview' )
 
 -- Highlight on yank
-vim.cmd ( 'autocmd TextYankPost * lua require("vim.highlight").on_yank({timeout = 40, on_visual = false})' )
+vim.cmd ( 'autocmd TextYankPost * lua require("vim.highlight").on_yank({timeout = 300, on_visual = false})' )
 
 -- set all options
 for option,value in pairs(my_options) do

@@ -108,12 +108,14 @@ snippet_enable.textDocument.completion.completionItem.resolveSupport = {
 
 -- Clone from git, then run 'cargo xtask install --server'
 require('lspconfig').rust_analyzer.setup{
+  filetypes = { "rust" },
   on_attach = LSP_signature_setup.on_attach,
   capabilities = snippet_enable,
 }
 
 -- sudo apt install clangd
 require('lspconfig').clangd.setup{
+  filetypes = { "c", "cpp", "objc", "objcpp" },
   on_attach = LSP_signature_setup.on_attach,
   capabilities = snippet_enable,
 }
@@ -123,6 +125,7 @@ require('lspconfig').vimls.setup(LSP_signature_setup)
 
 -- sudo npm install -g pyright
 require('lspconfig').pyright.setup{
+  filetypes = { "python" },
   on_attach = LSP_signature_setup.on_attach,
   capabilities = snippet_enable,
 }
@@ -136,6 +139,7 @@ require('lspconfig').bashls.setup{
 
 -- pip install cmake-language-server
 require('lspconfig').cmake.setup{
+  filetypes = { "cmake" },
   on_attach = LSP_signature_setup.on_attach
 }
 

@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'palenight',
+    theme = 'seoul256',
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
@@ -39,7 +39,16 @@ require('lualine').setup {
     },
     lualine_x = {
       {
-        'encoding'
+        'diff',
+        colored = true,
+        color_added = '#16f70a',
+        color_modified = '#dff705',
+        color_removed = '#ff0000',
+
+        symbols = {added = ' 🞧 ', modified = ' ᐃ ', removed = ' ⊖ '}
+      },
+      {
+        'branch'
       },
     },
     lualine_y = {'progress'},
@@ -56,22 +65,10 @@ require('lualine').setup {
   },
 
   tabline = {
-    lualine_a = {'branch'},
-    lualine_b = {
-      {
-        'diff',
-        colored = true,
-        color_added = '#16f70a',
-        color_modified = '#dff705',
-        color_removed = '#ff0000',
-
-        symbols = {added = ' 🞧 ', modified = ' ᐃ ', removed = ' ⊖ '}
-      },
-    },
+    lualine_a = {},
+    lualine_b = {},
     lualine_c = {},
   },
 }
 
-
-
-
+--vim.cmd('source $HOME/.config/nvim/lua/themes/tabline.vim')

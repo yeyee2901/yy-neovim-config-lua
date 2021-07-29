@@ -176,3 +176,4 @@ _noremap('n', '<Leader>tgcb',
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
 _noremap('n', '<Leader>tinit', '<cmd>lua require("my-telescope.wrapper").tele_open_config()<CR>')
+_noremap('n', '<Leader>tu', '<cmd>Telescope ultisnips<CR>')

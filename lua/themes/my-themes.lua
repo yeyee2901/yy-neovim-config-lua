@@ -35,13 +35,15 @@ M.set_monokai = function ()
   vim.cmd('highlight Normal guibg=#2e2e2e')
 end
 
--- Aurora theme
+-- Aurora theme by ray X, strong but can hurt
 M.set_aurora = function()
   vim.cmd('colorscheme aurora')
 end
 
--- Rainbow bracket colorizer
-vim.g.rainbow_active = true
+-- Gruvbuddy by TJDevries, calming for some reason
+M.set_gruvbuddy = function ()
+  require('colorbuddy').colorscheme('gruvbuddy')
+end
 
 -- Vim colorizer
 require('colorizer').setup()
