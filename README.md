@@ -1,12 +1,13 @@
 # Neovim >= 0.5.0 Configuration files in Lua
-2 Top themes  
+![start](img/start-art.png)
+
+## 2 Top themes  
 Aurora by ray-x (a bit heavy on my eyes though):
 ![image](https://user-images.githubusercontent.com/55247343/126057008-4ef89222-791a-4450-b517-f435dcb9cc51.png)
   
   
 Gruvbuddy by tjdevries :  
 ![neovim-gruvbuddy](img/neovim-gruvbuddy.png)
-
 
 
 
@@ -112,8 +113,11 @@ This will generate file named 'compile_commands.json', which tells the clangd LS
 " Build project from build files: SPACE - c - b  
 " Close CMake window: SPACE - c - q  
 ```
-6. And many more! You can read all through the config files if you want to utilize the full potential of Neovim 0.5.0. If you want more info, read the `lua/keymaps.lua` file for list of keymaps.
+6. And many more! You can read all through the config files if you want to utilize the full potential of Neovim 0.5.0.  
+
   
+7. If you want more keymappings info, read the `lua/keymaps.lua` file for list of keymaps.
+![keymaps](img/keymaps.png)  
 &nbsp;  
   
 # INSTALLATION
