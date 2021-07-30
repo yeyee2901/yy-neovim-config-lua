@@ -1,4 +1,6 @@
-let s:separator = ' '
+" Choose separator of your choice. And make sure your
+" terminal emulator can render it.
+let s:separator = ''
 
 " To get buffer name and attach it to the tab
 function SimpleTabLabel(n)
@@ -9,6 +11,7 @@ function SimpleTabLabel(n)
 
   return len(label) == 0 ? 'No-Name' : label
 endfunction
+
 
 " Iterate through all tabpage and give name
 " according to SimpleTabLabel ret val
@@ -30,17 +33,15 @@ function SimpleTabline()
     " get label
     let tabline .= ' %{SimpleTabLabel(' . (i + 1) . ')} '
 
-    if i + 1 == tabpagenr()
-      let tabline .= '%#TabLineSep#' . s:separator
-    elseif i + 2 == tabpagenr()
-      let tabline .= '%#TabLineSep#' . s:separator
-    else
-      let tabline .= s:separator
+    " Display how many windows are open in that tab
+    if i+1 == tabpagenr()
+        let tabline .= '%#TabLineSel#'
     endif
+    let tabline .= s:separator
   endfor
 
   " Fill the tab
-  let tabline .= '%#TabLineFill#%T'
+"  let tabline .= '%#TabLineFill#%T'
 
   " Right alignment
   if tabpagenr('$') > 1

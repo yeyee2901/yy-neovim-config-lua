@@ -105,6 +105,7 @@ _noremap('n', '<Leader>j',   '<cmd>lua require("lspsaga.diagnostic").lsp_jump_di
 _noremap('n', '<Leader>k',   '<cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_prev()<CR>')
 _noremap('n', '<Leader>rn',  '<cmd>lua require("lspsaga.rename").rename()<CR>')
 
+
 -- PLUGIN: Nvim-compe (for code completion)
 _noremap_expr('i', '<Tab>', 'compe#confirm("<Tab>")')
 _noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
@@ -117,6 +118,11 @@ _noremap('n', '<Leader>ga', '<cmd>Git add .<CR>')
 -- for easy merge conflict resolving
 _noremap('n', '<Leader>gh', '<cmd>diffget //2<CR>')
 _noremap('n', '<Leader>gl', '<cmd>diffget //3<CR>')
+
+
+-- PLUGIN: Markdown Previewer
+_noremap('n', '<Leader>mp', '<cmd>MarkdownPreviewToggle<CR>')
+_noremap('n', '<Leader>mi', '<cmd>call mdip#MarkdownClipboardImage()<CR>')
 
 
 -- PLUGIN: Telescope

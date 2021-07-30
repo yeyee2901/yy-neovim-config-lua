@@ -28,6 +28,7 @@ require('user-plugin-settings.setup-vim_cmake')
 require('user-plugin-settings.setup-nvim-tree')
 require('user-plugin-settings.setup-telescope')
 require('user-plugin-settings.setup-snippets')
+require('user-plugin-settings.setup-markdown-preview')
 
 require('LSP-TS-Compe.compe_config')
 require('LSP-TS-Compe.lsp-diagnostic-setup')
@@ -41,7 +42,7 @@ require('keymaps')
 --require('themes.my-themes').set_ayu("mirage")
 --require('themes.my-themes').set_tokyonight("night")
 --require('themes.my-themes').set_codedark()
-require('themes.my-themes').set_gruvbuddy()
+require('themes.my-themes').set_custom()
 
 -- For startup page
 vim.cmd('source ~/.config/nvim/start-page.vim')

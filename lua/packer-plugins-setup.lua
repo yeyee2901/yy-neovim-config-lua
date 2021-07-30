@@ -32,7 +32,7 @@ require('packer').startup(
     use {'tjdevries/gruvbuddy.nvim',
       requires = {
         'tjdevries/colorbuddy.vim'
-      }
+      },
     }
     use {'hoob3rt/lualine.nvim',
       requires = {
@@ -61,11 +61,10 @@ require('packer').startup(
     use {'nvim-telescope/telescope.nvim'}
     use {'nvim-telescope/telescope-symbols.nvim'}
     use {'nvim-telescope/telescope-fzy-native.nvim'}
-    use {
-      'fhill2/telescope-ultisnips.nvim',
+    use { 'fhill2/telescope-ultisnips.nvim',
       requires = {
         'SirVer/ultisnips'
-      }
+        }
     }
 
     -- Git it gud
@@ -76,8 +75,15 @@ require('packer').startup(
     use {'honza/vim-snippets'}
 
     -- Bracket stuffs
-    use {'rstacruz/vim-closer'}
+    use {'jiangmiao/auto-pairs'}
     use {'tpope/vim-surround'}
+
+    -- Markdown editing
+    -- run:
+    --    PackerUpdate
+    --    call mkdp#util#install()
+    use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()'}
+    use {'ferrine/md-img-paste.vim'}
 
   end
 )

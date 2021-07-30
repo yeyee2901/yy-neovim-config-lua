@@ -71,4 +71,5 @@ require('lualine').setup {
   },
 }
 
---vim.cmd('source $HOME/.config/nvim/lua/themes/tabline.vim')
+-- Enable this if you like tabline
+vim.cmd('source $HOME/.config/nvim/lua/themes/tabline.vim')

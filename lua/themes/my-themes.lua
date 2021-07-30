@@ -41,7 +41,8 @@ M.set_aurora = function()
 end
 
 -- Gruvbuddy by TJDevries, calming for some reason
-M.set_gruvbuddy = function ()
+M.set_custom = function ()
+  require('colorbuddy').setup()
   require('colorbuddy').colorscheme('gruvbuddy')
 end
 
