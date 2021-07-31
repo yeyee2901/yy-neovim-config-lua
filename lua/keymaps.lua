@@ -31,9 +31,11 @@ _noremap('n', '<Leader>ef', '<cmd>Lexplore<CR>')
 _noremap('v', '<Tab>',        '>gv')
 _noremap('v', '<S-Tab>',      '<gv')
 _noremap('v', '<BS>',         'xgv')
-_noremap_silent('v', '<M-k>', ':m-2<CR>gv') -- in visual line, move line up
-_noremap_silent('v', '<M-j>', ':m \'>+1<CR>gv') -- in visual line, move line down
-                                                       -- '>  = last char of selection
+
+-- useful for moving lines up and down with auto indenting
+_noremap_silent('v', '<M-k>', ':m-2<CR>gv=gv')
+_noremap_silent('v', '<M-j>', ':m \'>+1<CR>gv=gv')
+
 
 -- append to all selected line
 -- (intended to be used with VISUAL-BLOCK mode only)
