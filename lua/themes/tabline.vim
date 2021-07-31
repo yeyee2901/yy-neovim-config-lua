@@ -1,6 +1,6 @@
 " Choose separator of your choice. And make sure your
 " terminal emulator can render it.
-let s:separator = '  '
+let s:separator = '  '
 
 " To get buffer name and attach it to the tab
 function SimpleTabLabel(n)
@@ -38,7 +38,6 @@ function SimpleTabline()
         let tabline .= '%#TabLineSel#'
     endif
     let tabline .= s:separator
-    let tabline .= '%#TabLineFill#'
   endfor
 
   " Right alignment
@@ -50,5 +49,3 @@ function SimpleTabline()
 endfunction
 
 set tabline=%!SimpleTabline()
-highlight TabLineSel guibg=#87AFAF guifg=#000000
-highlight TabLineFill guibg=#282c34

@@ -61,18 +61,17 @@ _noremap('n', '<M-Left>',  '<C-w><')
 
 
 -- Buffer keymappings ------------------------------------------------------------
-_noremap('n', '<S-b>b', '<cmd>buffers<CR>')
-_noremap('n', '<S-b>n', '<cmd>enew<CR>')
-_noremap('n', '<S-b>q', '<cmd>bdelete<CR>')
-_noremap('n', '<S-b>l', '<cmd>bNext<CR>')
-_noremap('n', '<S-b>h', '<cmd>bprevious<CR>')
+_noremap('n', '<M-b>', '<cmd>buffers<CR>')
+_noremap('n', '<M-e>', '<cmd>enew<CR>')
+_noremap('n', '<M-q>', '<cmd>bdelete<CR>')
+_noremap('n', '<M-l>', '<cmd>bnext<CR>')
+_noremap('n', '<M-h>', '<cmd>bprevious<CR>')
 
 -- Tab keymappings ---------------------------------------------------------------
-_noremap('n', '<S-t>n', '<cmd>tabnew<CR>')
-_noremap('n', '<S-t>q', '<cmd>tabclose<CR>')
-_noremap('n', '<S-t>l', '<cmd>tabNext<CR>')
-_noremap('n', '<S-t>h', '<cmd>tabprevious<CR>')
-_noremap('n', '<Tab>',  '<cmd>tabNext<CR>')
+_noremap('n', '<Tab>n', '<cmd>tabnew<CR>')
+_noremap('n', '<Tab>q', '<cmd>tabclose<CR>')
+_noremap('n', '<Tab>l', '<cmd>tabnext<CR>')
+_noremap('n', '<Tab>h', '<cmd>tabprevious<CR>')
 
 
 -- Plugin specific keymaps -------------------------------------------------------
@@ -84,6 +83,7 @@ _noremap('n', '<Leader>cg', '<cmd>CMakeClean<CR><cmd>CMakeGenerate<CR>')
 _noremap('n', '<Leader>cb', '<cmd>CMakeBuild<CR>')
 _noremap('n', '<Leader>cq', '<cmd>CMakeClose<CR>')
 
+
 -- PLUGIN: Nvim-tree
 _noremap('n', '<Leader>nt', '<cmd>NvimTreeToggle<CR>')
 _noremap('n', '<Leader>nr', '<cmd>NvimTreeRefresh<CR>')
@@ -92,6 +92,7 @@ _noremap('n', '<Leader>nr', '<cmd>NvimTreeRefresh<CR>')
 -- PLUGIN: LSP saga (for floating terminal)
 _noremap('n', '<Leader>ft', '<cmd>lua require("lspsaga.floaterm").open_float_terminal()<CR>')
 _noremap('t', '<ESC><ESC>', '<cmd>lua require("lspsaga.floaterm").close_float_terminal()<CR>')
+
 
 -- PLUGIN: LSP stuffs (I don't know if there's a more proper way, contact me if you know)
 _noremap('n', '<Leader>p',   '<cmd>lua require("lspsaga.provider").preview_definition()<CR>')

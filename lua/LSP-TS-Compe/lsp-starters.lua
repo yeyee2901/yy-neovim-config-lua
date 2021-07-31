@@ -33,7 +33,7 @@ local LSP_signature_setup = {
       hint_enable = true,
       hint_prefix = "<> ",
       hint_scheme = "String",
-      use_lspsaga = false,
+      use_lspsaga = true,
       hi_parameter = "Search",
       max_height = 12,
       max_width = 120,
@@ -89,6 +89,7 @@ lsp_saga.init_lsp_saga{
   hint_sign = '',
   infor_sign = '',
   dianostic_header_icon = '  ',
+  max_preview_lines = 10,           -- preview lines for provider functions.
   code_action_prompt = {
     enable = false,
   },
