@@ -56,4 +56,7 @@ require('themes.lualine')
 vim.cmd('autocmd BufWinEnter,InsertLeave * highlight CursorLine guibg=#353b47')
 vim.cmd('autocmd InsertEnter * highlight CursorLine guibg=#15181f')
 
+-- Color column for OCD prevention (according to PEP)
+vim.cmd('highlight ColorColumn guibg=#353b47')
+
 return M

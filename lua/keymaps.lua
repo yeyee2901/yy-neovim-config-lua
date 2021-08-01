@@ -129,60 +129,39 @@ _noremap('n', '<Leader>mi', '<cmd>call mdip#MarkdownClipboardImage()<CR>')
 
 
 -- PLUGIN: Telescope
-_noremap('n', '<Leader>tc', '<cmd>Telescope commands<CR>')
-_noremap('n', '<Leader>tf', '<cmd>Telescope find_files<CR>')
-_noremap('n', '<Leader>tz', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
-_noremap('n', '<Leader>tb', '<cmd>Telescope buffers<CR>')
-_noremap('n', '<Leader>t?', '<cmd>Telescope keymaps<CR>')
-_noremap('n', '<Leader>tsg', ':Telescope grep_string search=')
-_noremap('n', '<Leader>tsl',
-  '<cmd>lua require("telescope.builtin").live_grep( require("telescope.themes").get_dropdown() )<CR>'
-)
+_noremap('n', '<Leader>t?',  '<cmd>lua require("my-telescope.wrapper").tele_keymaps()<CR>')
+_noremap('n', '<Leader>tc',  '<cmd>lua require("my-telescope.wrapper").tele_command_list()<CR>')
+_noremap('n', '<Leader>tf',  '<cmd>lua require("my-telescope.wrapper").tele_find_files()<CR>')
+_noremap('n', '<Leader>tb',  '<cmd>lua require("my-telescope.wrapper").tele_buffer_lists()<CR>')
+_noremap('n', '<Leader>tz',  '<cmd>lua require("my-telescope.wrapper").tele_current_buffer_fuzzy_find()<CR>')
+_noremap('n', '<Leader>ts', '<cmd>lua require("my-telescope.wrapper").tele_live_grep()<CR>')
 
 -- Query all function names, vars, and ohter symbols from Tree Sitter queries
-_noremap('n', '<Leader>tt', '<cmd>lua require("telescope.builtin").treesitter()<CR>')
+_noremap('n', '<Leader>tt', '<cmd>lua require("my-telescope.wrapper").tele_treesitter()<CR>')
 
 -- LSP in Telescope
-_noremap('n', '<Leader>tlds',   '<cmd>Telescope lsp_document_symbols<CR>')
-_noremap('n', '<Leader>tldd',   '<cmd>Telescope lsp_document_diagnostics<CR>')
-_noremap('n', '<Leader>tlws',   ':Telescope lsp_workspace_symbols query=')
-_noremap('n', '<Leader>tlwS',   '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>')
-_noremap('n', '<Leader>tlwd',   '<cmd>Telescope lsp_workspace_diagnostics<CR>')
-_noremap('n', '<Leader>tla',
-  '<cmd>lua require("telescope.builtin").lsp_range_code_actions( require("telescope.themes").get_dropdown() )<CR>'
-)
-_noremap('n', '<Leader>tlgd',
-  '<cmd>lua require("telescope.builtin").lsp_definitions( require("telescope.themes").get_dropdown())<CR>')
-_noremap('n', '<Leader>tlr',
-  '<cmd>lua require("telescope.builtin").lsp_references( require("telescope.themes").get_dropdown())<CR>')
+_noremap('n', '<Leader>tldd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_document_diagnostics()<CR>')
+_noremap('n', '<Leader>tlws',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_dynamic_workspace_symbols()<CR>')
+_noremap('n', '<Leader>tlwd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_workspace_diagnostics()<CR>')
+_noremap('n', '<Leader>tla',   '<cmd>lua require("my-telescope.wrapper").tele_lsp_range_code_actions()<CR>')
+_noremap('n', '<Leader>tlgd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_definitions()<CR>')
+_noremap('n', '<Leader>tlr',   '<cmd>lua require("my-telescope.wrapper").tele_lsp_references()<CR>')
 
 -- Open quickfix list (you can send any search result from telescope to quickfix list
 -- by pressing Ctrl + q while Telescope is open)
 -- There are 2 ways to fill quickfix list:
 --  - using any Telescope calls
 --  - using vimgrep (ex: vimgrep /def/g ./*.py    -> search all 'def' in *.py file in current dir)
-_noremap('n', '<Leader>tqf', '<cmd>Telescope quickfix<CR>')
+_noremap('n', '<Leader>tqf', '<cmd>lua require("my-telescope.wrapper").tele_quickfix()<CR>')
 
 -- Git in Telescope
-_noremap('n', '<Leader>tgs',
-  '<cmd>lua require("telescope.builtin").git_branches( require("telescope.themes").get_dropdown() )<CR>'
-)
-_noremap('n', '<Leader>tgs',
-  '<cmd>lua require("telescope.builtin").git_status( require("telescope.themes").get_dropdown() )<CR>'
-)
-_noremap('n', '<Leader>tgf',
-  '<cmd>lua require("telescope.builtin").git_files( require("telescope.themes").get_dropdown() )<CR>'
-)
-
--- commits = diff all files,  bcommits = diff current buffer
-_noremap('n', '<Leader>tgca',
-  '<cmd>lua require("telescope.builtin").git_commits( require("telescope.themes").get_dropdown() )<CR>'
-)
-_noremap('n', '<Leader>tgcb',
-  '<cmd>lua require("telescope.builtin").git_bcommits( require("telescope.themes").get_dropdown() )<CR>'
-)
+_noremap('n', '<Leader>tgb',  '<cmd>lua require("my-telescope.wrapper").tele_git_branches()<CR>')
+_noremap('n', '<Leader>tgs',  '<cmd>lua require("my-telescope.wrapper").tele_git_status()<CR>')
+_noremap('n', '<Leader>tgf',  '<cmd>lua require("my-telescope.wrapper").tele_git_files()<CR>')
+_noremap('n', '<Leader>tgca', '<cmd>lua require("my-telescope.wrapper").tele_git_commits()<CR>')
+_noremap('n', '<Leader>tgcb', '<cmd>lua require("my-telescope.wrapper").tele_git_branch_diff()<CR>')
 
 -- SOME HELPER FUNCTIONALITY
 -- open neovim config
 _noremap('n', '<Leader>tinit', '<cmd>lua require("my-telescope.wrapper").tele_open_config()<CR>')
-_noremap('n', '<Leader>tu', '<cmd>Telescope ultisnips<CR>')
+_noremap('n', '<Leader>tu',    '<cmd>lua require("my-telescope.wrapper").tele_snippets()<CR>')

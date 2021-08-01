@@ -21,6 +21,7 @@ local my_options = {
   cursorline      = true,
   inccommand      = 'split',
   signcolumn      = 'yes',
+  colorcolumn     = '0',
 }
 
 -- Allow Lua syntax in vimscripts ('l' as in lua)

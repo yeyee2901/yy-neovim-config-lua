@@ -1,3 +1,6 @@
+local preview_size = 30  -- 50% of the screen size
+local transparency = 10  -- in percent
+
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
@@ -18,16 +21,18 @@ require('telescope').setup{
     layout_strategy = "horizontal",
     layout_config = {
       horizontal = {
+        height = preview_size,
         mirror = false,
       },
       vertical = {
+        height = preview_size,
         mirror = false,
       },
     },
     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
+    file_ignore_patterns = { ".png", ".jpg", ".jpeg" },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    winblend = 0,
+    winblend = transparency,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
     color_devicons = true,
