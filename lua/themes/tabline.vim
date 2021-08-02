@@ -31,19 +31,16 @@ function SimpleTabline()
     let tabline .= '%' . (i + 1) . 'T'
 
     " get label
-    let tabline .= ' %{SimpleTabLabel(' . (i + 1) . ')} '
+    let tabline .= ' %{SimpleTabLabel(' . (i + 1) . ')}'
 
     " Display how many windows are open in that tab
     if i+1 == tabpagenr()
         let tabline .= '%#TabLineSel#'
     endif
+
+    " Finally the separator
     let tabline .= s:separator
   endfor
-
-  " Right alignment
-  if tabpagenr('$') > 1
-    let tabline .= '%=%#TabLine#%999X'
-  endif
 
   return tabline
 endfunction

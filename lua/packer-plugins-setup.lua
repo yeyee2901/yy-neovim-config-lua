@@ -17,9 +17,10 @@ end
 
 require('packer').startup(
   function()
+    -- Packer self management, DO NOT REMOVE
     use {'wbthomason/packer.nvim'}
 
-    -- Nvim tree > NERDTree, no debate :)
+    -- File tree preview
     use{'kyazdani42/nvim-web-devicons'}
     use{'kyazdani42/nvim-tree.lua'}
 
@@ -34,19 +35,21 @@ require('packer').startup(
         'tjdevries/colorbuddy.vim'
       },
     }
+
+    -- Status line
     use {'hoob3rt/lualine.nvim',
       requires = {
         'kyazdani42/nvim-tree.lua'
       }
     }
 
-    -- Colorizer for color codes
+    -- Colorizer for color codes like this one -> #ff0000
     use {'norcalli/nvim-colorizer.lua'}
 
     --CMake Integration
     use {'cdelledonne/vim-cmake'}
 
-    -- LSP setup
+    -- LSP (Language Server)
     use {'neovim/nvim-lspconfig'}
     use {'hrsh7th/nvim-compe'}
     use {'ray-x/lsp_signature.nvim'}
@@ -55,7 +58,7 @@ require('packer').startup(
     -- Tree Sitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-    -- Telescopeeeeeee
+    -- Telescopeee, behold the most overpowered meta plugin
     use {'nvim-lua/popup.nvim'}
     use {'nvim-lua/plenary.nvim'}
     use {'nvim-telescope/telescope.nvim'}
