@@ -173,6 +173,30 @@ require('lspconfig').sqlls.setup{
   capabilities = snippet_enable
 }
 
+-- cargo install tectonic (for compiling)
+-- cargo install --git https://github.com/latex-lsp/texlab.git --locked (for language server)
+require('lspconfig').texlab.setup{
+
+  on_attach = LSP_signature_setup.on_attach,
+  capabilities = snippet_enable,
+
+  cmd = { 'texlab' },
+  filetypes = { 'tex', 'bib' },
+
+  settings = {
+    bibtexFormatter = 'texlab',
+
+    -- check section
+    chktex = {
+      onOpenAndSave = true,
+      onEdit = true,
+    },
+
+    diagnosticsDelay = 100, --ms
+    formatterLineLength = 100,
+  }
+}
+
 
 -- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)
 -- Because I install Lua Language manually, We have to do some setup here
