@@ -11,7 +11,6 @@ local _noremap_silent = function(mode, key, map_to)
   vim.api.nvim_set_keymap(mode, key, map_to, {noremap = true, silent = true})
 end
 
-
 -- Map <leader> key to SPACE
 _noremap('', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
@@ -20,22 +19,15 @@ vim.g.maplocalleader = ' '
 -- Togle highlighting after searching
 _noremap('n', '<S-h>', '<cmd>set hlsearch!<CR>')
 
--- Simple file browser
-_noremap('n', '<Leader>ef', '<cmd>Lexplore<CR>')
-
--- Allow navigation in wrapped line
---_noremap('n', 'j', 'gj')
---_noremap('n', 'k', 'gk')
 
 -- Visual mode editing ----------------------------------------------------------
-_noremap('v', '<Tab>',        '>gv')
-_noremap('v', '<S-Tab>',      '<gv')
-_noremap('v', '<BS>',         'xgv')
+_noremap('v', '<Tab>',   '>gv')
+_noremap('v', '<S-Tab>', '<gv')
+_noremap('v', '<BS>',    'xgv')
 
 -- useful for moving lines up and down with auto indenting
 _noremap_silent('v', '<M-k>', ':m-2<CR>gv=gv')
 _noremap_silent('v', '<M-j>', ':m \'>+1<CR>gv=gv')
-
 
 -- append to all selected line
 -- (intended to be used with VISUAL-BLOCK mode only)
@@ -67,6 +59,7 @@ _noremap('n', '<M-q>', '<cmd>bdelete<CR>')
 _noremap('n', '<M-l>', '<cmd>bnext<CR>')
 _noremap('n', '<M-h>', '<cmd>bprevious<CR>')
 
+
 -- Tab keymappings ---------------------------------------------------------------
 _noremap('n', '<Tab>n', '<cmd>tabnew<CR>')
 _noremap('n', '<Tab>q', '<cmd>tabclose<CR>')
@@ -74,9 +67,9 @@ _noremap('n', '<Tab>l', '<cmd>tabnext<CR>')
 _noremap('n', '<Tab>h', '<cmd>tabprevious<CR>')
 
 
+
 -- Plugin specific keymaps -------------------------------------------------------
--- Most of the plugin keymapping will start with <leader>  (SPACE key)
--- All silent = false, so we can see what command was called
+-- Plugins are prefixed with <Leader> (space key)
 
 -- PLUGIN: CMake
 _noremap('n', '<Leader>cg', '<cmd>CMakeClean<CR><cmd>CMakeGenerate<CR>')
@@ -85,8 +78,7 @@ _noremap('n', '<Leader>cq', '<cmd>CMakeClose<CR>')
 
 
 -- PLUGIN: Nvim-tree
-_noremap('n', '<Leader>nt', '<cmd>NvimTreeToggle<CR>')
-_noremap('n', '<Leader>nr', '<cmd>NvimTreeRefresh<CR>')
+_noremap('n', '<Leader>n', '<cmd>NvimTreeToggle<CR>')
 
 
 -- PLUGIN: LSP saga (for floating terminal)
@@ -112,11 +104,14 @@ _noremap('n', '<Leader>rn',  '<cmd>lua require("lspsaga.rename").rename()<CR>')
 -- PLUGIN: Nvim-compe (for code completion)
 _noremap_expr('i', '<Tab>', 'compe#confirm("<Tab>")')
 _noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
+_noremap_expr('i', '<C-k>', 'compe#scroll({"delta": -4})')
+_noremap_expr('i', '<C-j>', 'compe#scroll({"delta": +4})')
 
 
 -- PLUGIN: fuGITive (the rest are provided by telescope functionality)
 _noremap('n', '<Leader>gs', '<cmd>G<CR>')
 _noremap('n', '<Leader>ga', '<cmd>Git add .<CR>')
+
 
 -- for easy merge conflict resolving
 _noremap('n', '<Leader>gh', '<cmd>diffget //2<CR>')
