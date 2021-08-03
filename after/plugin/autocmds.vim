@@ -34,7 +34,7 @@ augroup END
 augroup LaTeXgroup
     autocmd!
     autocmd VimEnter,BufEnter *.tex set ft=tex
-    autocmd VimEnter,BufEnter tex set wrap
+    autocmd VimEnter,BufEnter *.tex set wrap
     autocmd BufWritePost *.tex
                 \ !tectonic --synctex --keep-logs --keep-intermediates %
     autocmd VimEnter,BufEnter *.tex nnoremap j gj
