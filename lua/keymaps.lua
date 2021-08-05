@@ -160,3 +160,8 @@ _noremap('n', '<Leader>tgcb', '<cmd>lua require("my-telescope.wrapper").tele_git
 -- open neovim config
 _noremap('n', '<Leader>tinit', '<cmd>lua require("my-telescope.wrapper").tele_open_config()<CR>')
 _noremap('n', '<Leader>tu',    '<cmd>lua require("my-telescope.wrapper").tele_snippets()<CR>')
+
+-- LaTeX Stuffs
+_noremap('n', ';ta', '<cmd>TeXall<CR>')
+_noremap('n', ';tt', '<cmd>TeXmake<CR>')
+_noremap('n', ';tb', '<cmd>TeXbib<CR>')

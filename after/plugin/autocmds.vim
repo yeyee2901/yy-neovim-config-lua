@@ -36,10 +36,9 @@ augroup LaTeXgroup
     autocmd!
     autocmd VimEnter,BufEnter *.tex set ft=tex
     autocmd VimEnter,BufEnter *.tex set wrap
-    autocmd BufWritePost *.tex
-                \ !tectonic --synctex --keep-logs --keep-intermediates --print %
     autocmd VimEnter,BufEnter *.tex nnoremap j gj
     autocmd VimEnter,BufEnter *.tex nnoremap k gk
     autocmd VimEnter,BufEnter *.tex nnoremap 0 g0
     autocmd VimEnter,BufEnter *.tex nnoremap $ g$
+    autocmd VimEnter,BufEnter *.tex source ~/.config/nvim/after/plugin/LaTeX_comamands.vim
 augroup END
