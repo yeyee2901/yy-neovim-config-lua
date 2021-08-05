@@ -30,13 +30,16 @@ augroup TransparentBackground
 augroup END
 
 " LaTeX group
-" Automatically build on save
+" - Automatically build on save
+" - Enable navigation in a wrapped line easily
 augroup LaTeXgroup
     autocmd!
     autocmd VimEnter,BufEnter *.tex set ft=tex
     autocmd VimEnter,BufEnter *.tex set wrap
     autocmd BufWritePost *.tex
-                \ !tectonic --synctex --keep-logs --keep-intermediates %
+                \ !tectonic --synctex --keep-logs --keep-intermediates --print %
     autocmd VimEnter,BufEnter *.tex nnoremap j gj
     autocmd VimEnter,BufEnter *.tex nnoremap k gk
+    autocmd VimEnter,BufEnter *.tex nnoremap 0 g0
+    autocmd VimEnter,BufEnter *.tex nnoremap $ g$
 augroup END
