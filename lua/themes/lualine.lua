@@ -80,27 +80,8 @@ require('lualine').setup {
 
   inactive_sections = {
     lualine_a = {},
-    lualine_b = {
-      {
-        'filename',
-        path = 0,
-      },
-    },
+    lualine_b = {},
     lualine_c = {},
-    lualine_x = {
-      {
-        'diff',
-        colored = true,
-        color_added = '#16f70a',
-        color_modified = '#dff705',
-        color_removed = '#ff0000',
-
-        symbols = {added = ' 🞧 ', modified = ' ~ ', removed = ' ⊖ '}
-      },
-      {
-        'branch'
-      },
-    },
     lualine_y = {},
     lualine_z = {}
   },

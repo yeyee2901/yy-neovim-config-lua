@@ -46,3 +46,6 @@ require('themes.my-themes').set_custom()
 -- For startup page
 vim.cmd('source ~/.config/nvim/start-page.vim')
 vim.cmd('autocmd VimEnter * call Start()')
+
+-- Temporary
+--vim.cmd('source ~/.config/nvim/autocmds.vim')

@@ -432,6 +432,9 @@ snippet boiler_laporan "Template Laporan"
 }
 
 
+% LINE SPACINGS %%%%%%%%%%%%% 
+\renewcommand{\baselinestretch}{1.0}    % line spacing
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -453,6 +456,9 @@ snippet boiler_laporan "Template Laporan"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+% PARAGRPAH SPACING %%%%%%%%%%%%%%%%%% 
+\setlength{\parindent}{1cm}    % beginning of paragraph indentation
+%\setlength{\parskip}{2cm}     % paragraph spacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	TITLE PAGE
@@ -467,7 +473,6 @@ snippet boiler_laporan "Template Laporan"
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %	Title
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
     % Whitespace above the title
     \vspace{0.75\baselineskip}
 
@@ -562,6 +567,7 @@ Nah, kalau pakai label bisa di referensikan seperti ini: Gambar \ref{gambar:logo
 Nomor gambar muncul karena menggunakan \verb|\ref{gambar:logo_wm}|. 
 dimana \verb|gambar:logo_wm| merupakan nama label yang di definisikan di environment figurenya)
 
+lorem ipsum \dotfill
 
 %%%%%%%%%%%%%%%%%%%%%%
 % 1.1.1 Listing Program
@@ -598,6 +604,7 @@ int main(int argc, const char *argv[])
 % END OF DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
+
 endsnippet
 
 snippet boiler_tugas "Template Tugas Pendek"
@@ -946,3 +953,4 @@ $2
 \vspace{0.5in}
 
 endsnippet
+
