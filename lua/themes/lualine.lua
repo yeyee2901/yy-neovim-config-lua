@@ -70,7 +70,7 @@ require('lualine').setup {
         symbols = {added = ' 🞧 ', modified = ' ~ ', removed = ' ⊖ '}
       },
       {
-        'branch'
+        'FugitiveHead'
       },
     },
     lualine_y = {},
@@ -79,7 +79,16 @@ require('lualine').setup {
 
 
   inactive_sections = {
-    lualine_a = {},
+    lualine_a = {
+        {
+            'filetype',
+            colored = true
+        },
+        {
+            'filename',
+            path = 0,
+        },
+    },
     lualine_b = {},
     lualine_c = {},
     lualine_y = {},
