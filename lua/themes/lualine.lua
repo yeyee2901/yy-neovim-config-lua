@@ -1,3 +1,31 @@
+-----------------------------------------
+-- Themes
+-----------------------------------------
+-- 16color  (blue,green,black dominant)
+-- auto
+-- ayu_dark, ayu_light, ayu_mirage
+-- dracula
+-- everforest (hijau toska)
+-- gruvbox, gruvbox_light, gruvbox_material (sort of cream pink-ish?)
+-- horizon (dark blue-pink dominant)
+-- iceberg_dark, iceberg_light (very dark purple - very light blue)
+-- jellybeans (like seoul256, but darker)
+-- material (similar to jellybeans)
+-- modus_vivendi (similar to jellybeans)
+-- molokai (sublime color but brighter)
+-- nightfly (match with tokyonight)
+-- nord (like nightfly, but brighter)
+-- oceanicnext (light blue)
+-- onedark, onelight (VS Code)
+-- palenight
+-- papercolor, papecolor_light, papercolor_dark (light theme)
+-- powerline (like powerline shell, very bright)
+-- seoul256 (match with gruvbuddy / gruvbox)
+-- solarized, solarized_light, solarized_dark (match with solarized terminal theme)
+-- tokyonight (match with tokyonight.nvim)
+-- tomorrow
+-- wombat (like seoul256, but lighter)
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -9,13 +37,7 @@ require('lualine').setup {
   sections = {
 
     -- A component must be a table, not sequential args
-    lualine_a = {
-      {
-        'mode',
-        icon = "Neoim",
-
-      }
-    },
+    lualine_a = {{'mode'}},
     lualine_b = {
       {
         'filetype',
@@ -23,7 +45,7 @@ require('lualine').setup {
       },
       {
         'filename',
-        path = 1,
+        path = 0,
       },
     },
     lualine_c = {
@@ -45,21 +67,40 @@ require('lualine').setup {
         color_modified = '#dff705',
         color_removed = '#ff0000',
 
-        symbols = {added = ' 🞧 ', modified = ' ᐃ ', removed = ' ⊖ '}
+        symbols = {added = ' 🞧 ', modified = ' ~ ', removed = ' ⊖ '}
       },
       {
         'branch'
       },
     },
-    lualine_y = {'progress'},
+    lualine_y = {},
     lualine_z = {'location'}
   },
 
+
   inactive_sections = {
     lualine_a = {},
-    lualine_b = {},
-    lualine_c = { { 'filename', path = 0 }, },
-    lualine_x = {'location'},
+    lualine_b = {
+      {
+        'filename',
+        path = 0,
+      },
+    },
+    lualine_c = {},
+    lualine_x = {
+      {
+        'diff',
+        colored = true,
+        color_added = '#16f70a',
+        color_modified = '#dff705',
+        color_removed = '#ff0000',
+
+        symbols = {added = ' 🞧 ', modified = ' ~ ', removed = ' ⊖ '}
+      },
+      {
+        'branch'
+      },
+    },
     lualine_y = {},
     lualine_z = {}
   },

@@ -23,7 +23,6 @@
 require('basic-settings')
 require('packer-plugins-setup')
 
-require('user-plugin-settings.setup-floaterm-fff')
 require('user-plugin-settings.setup-vim_cmake')
 require('user-plugin-settings.setup-nvim-tree')
 require('user-plugin-settings.setup-telescope')
