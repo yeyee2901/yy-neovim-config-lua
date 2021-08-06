@@ -407,11 +407,14 @@ snippet boiler_laporan "Template Laporan"
 \renewcommand{\figurename}{\textbf{Gambar}}
 
 % Setting bab size 14pt pakai \Large
-% (uncomment agar output Bab pakai angka romawi)
+% Bab pakai angka romawi
+% sub bab pakai angka arab
 \renewcommand{\chaptername}{BAB}
 \chaptertitlefont{\centering\Large}
 \chapternumberfont{\centering\Large}
-%\renewcommand\thechapter{\Arabic{chapter}}
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{chapter}.\arabic{section}}
+\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
 
 % Setting sub-bab <14pt pakai \large
 \sectionfont{\large}
@@ -487,16 +490,16 @@ snippet boiler_laporan "Template Laporan"
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %	Subtitle
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    Disusun oleh:\\
+    Disusun oleh:\\\
     Gabriel Sebastian H / 5103018003
 
     \vspace*{1\baselineskip}
 
     \textbf{
-        Jurusan Teknik Elektro\\
-        Fakultas Teknik\\
-        Universitas Katolik Widya Mandala\\
-        Surabaya\\
+        Jurusan Teknik Elektro\\\
+        Fakultas Teknik\\\
+        Universitas Katolik Widya Mandala\\\
+        Surabaya\\\
         2021
     } 
 
@@ -866,4 +869,80 @@ snippet boiler_tugas "Template Tugas Pendek"
 % END OF DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
+endsnippet
+
+snippet boiler_tugas_2 "Versi lebih simple"
+\documentclass[a4paper,12pt]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{afterpage}                  % insert blank page
+\usepackage[fleqn]{amsmath}             % matematika
+\usepackage{amssymb}
+\usepackage{graphicx}                   % embed gambar
+\usepackage{newtxtext,newtxmath}        % closest to licensed Times New Roman
+\usepackage{geometry}                   % untuk atur margin
+\usepackage{sectsty}
+
+\usepackage[
+    colorlinks=true,linkcolor=blue,citecolor=black
+]{hyperref}                  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SETUPS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{margin=1in, top=0.1in}
+
+\sectionfont{\Large}
+\subsectionfont{\large}
+
+\renewcommand{\figurename}{\textbf{Gambar}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{$1}
+\author{$2}
+\date{$3}
+
+\begin{document}
+\maketitle
+\noindent\hrulefill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Soal 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tips: generate snippet soal-jawaban: soal_jwb<Alt-TAB>
+\section*{Soal 1}
+$4
+
+\subsection*{Jawaban}
+
+\vspace{0.5in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+endsnippet
+
+snippet soal_jwb "Generate soal jawab u/ template tugas 2"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Soal $1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Soal $1}
+$2
+
+\subsection*{Jawaban}
+
+\vspace{0.5in}
+
 endsnippet

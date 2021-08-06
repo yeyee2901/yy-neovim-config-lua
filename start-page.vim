@@ -28,7 +28,7 @@ function Start()
         endwhile
 
         call append('$', '                                         [i]                 Enter insert mode                                ')
-        call append('$', '                                         [SPACE-f-f]         Open Floaterm file browser                       ')
+        call append('$', '                                         [SPACE-f-t]         Open Floating Terminal                           ')
         call append('$', '                                         [SPACE-t-g-f]       Open Telescope git_files                         ')
         call append('$', '                                         [SPACE-t-i-n-i-t]   Open Telescope for Neovim Config                 ')
         call append('$', '                                         [SPACE-t-?]         List Keymap                                      ')
