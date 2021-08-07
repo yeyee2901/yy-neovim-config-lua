@@ -416,6 +416,14 @@ snippet boiler_laporan "Template Laporan"
 \renewcommand\thesection{\arabic{chapter}.\arabic{section}}
 \renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
 
+% Atur agar notasi listing & figure tidak ikut romawi seperti chapter
+\AtBeginDocument{
+    \renewcommand*{\thelstlisting}{\arabic{chapter}.\arabic{lstlisting}}
+}
+\AtBeginDocument{
+    \renewcommand*{\thefigure}{\arabic{chapter}.\arabic{figure}}
+}
+
 % Setting sub-bab <14pt pakai \large
 \sectionfont{\large}
 \subsectionfont{\large}
@@ -952,4 +960,3 @@ $2
 \vspace{0.5in}
 
 endsnippet
-
