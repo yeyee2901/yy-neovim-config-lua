@@ -7,11 +7,8 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin:$HOME/.config/nvim/plugged/:$HOME/.lo
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="awesomepanda"
+# awesomepanda, af-magic, amuse
+ZSH_THEME="amuse"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -41,8 +38,14 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-alias la="ls -lah"
-alias cls="clear ; la"
+alias ls="exa -lah"
+alias grep='rg'
+alias cat='bat'
+alias cls="clear ; ls"
+alias v='vim'
+alias nv='nvim'
+alias sk='screenkey'
+alias r='ranger'
 
 # FFF file manager specific setups (show hidden files & use neovim 0.5.0 for default editor)
 export EDITOR="nvim"

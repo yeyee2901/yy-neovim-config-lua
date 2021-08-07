@@ -66,9 +66,15 @@ M.tele_treesitter = function ()
   }))
 end
 
+M.tele_lsp_document_symbols = function ()
+  builtin.lsp_document_symbols(themes[default_theme]({
+    prompt_title = "< Document Symbols >"
+  }))
+end
+
 M.tele_lsp_document_diagnostics = function ()
   builtin.lsp_document_diagnostics(themes[default_theme]({
-    prompt_title = "< Buffer Diagnostics >"
+    prompt_title = "< Document Diagnostics >"
   }))
 end
 

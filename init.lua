@@ -48,10 +48,6 @@ vim.cmd('source ~/.config/nvim/start-page.vim')
 vim.cmd('autocmd VimEnter * call Start()')
 
 -- Temporary for LaTeX stuffs
--- QUESTION: Does autocommands get sourced automatically?
--- If I sourced the autocmds.vim file (which contains) all
--- of my augroup, sometimes (well, actually often times) my neovim
--- renders weirdly. I thought it was my terminal (konsole), but
--- I tested it in kitty and it's the same.
+-- Currently, no API for autocommand & defining command
 vim.cmd('source ~/.config/nvim/autocmds.vim')
 vim.cmd('source ~/.config/nvim/LaTeX/LaTeX_comamands.vim')

@@ -43,12 +43,12 @@ require('lualine').setup {
         'filetype',
         colored = true
       },
+    },
+    lualine_c = {
       {
         'filename',
         path = 0,
       },
-    },
-    lualine_c = {
       {
         'diagnostics',
         sources = {'nvim_lsp'},
@@ -61,19 +61,15 @@ require('lualine').setup {
     },
     lualine_x = {
       {
-        'diff',
-        colored = true,
-        color_added = '#16f70a',
-        color_modified = '#dff705',
-        color_removed = '#ff0000',
-
-        symbols = {added = ' 🞧 ', modified = ' ~ ', removed = ' ⊖ '}
-      },
-      {
-        'FugitiveHead'
+         'diff',
+         colored = true,
+         color_added = '#16f70a',
+         color_modified = '#dff705',
+         color_removed = '#ff0000',
+         symbols = {added = ' 🞧 ', modified = ' ~ ', removed = ' ⊖ '}
       },
     },
-    lualine_y = {},
+    lualine_y = { 'branch' },
     lualine_z = {'location'}
   },
 

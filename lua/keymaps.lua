@@ -136,6 +136,7 @@ _noremap('n', '<Leader>tt', '<cmd>lua require("my-telescope.wrapper").tele_trees
 
 -- LSP in Telescope
 _noremap('n', '<Leader>tldd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_document_diagnostics()<CR>')
+_noremap('n', '<Leader>tlds',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_document_symbols()<CR>')
 _noremap('n', '<Leader>tlws',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_dynamic_workspace_symbols()<CR>')
 _noremap('n', '<Leader>tlwd',  '<cmd>lua require("my-telescope.wrapper").tele_lsp_workspace_diagnostics()<CR>')
 _noremap('n', '<Leader>tla',   '<cmd>lua require("my-telescope.wrapper").tele_lsp_range_code_actions()<CR>')
