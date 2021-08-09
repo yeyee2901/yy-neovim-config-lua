@@ -885,7 +885,7 @@ snippet boiler_tugas "Template Tugas Pendek"
 \end{document}
 endsnippet
 
-snippet boiler_tugas_2 "Versi lebih simple"
+snippet boiler_tugas_pendek "Tugas pendek"
 \documentclass[a4paper,12pt]{article}
 
 
@@ -893,13 +893,15 @@ snippet boiler_tugas_2 "Versi lebih simple"
 % PACKAGES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8]{inputenc}
-\usepackage{afterpage}                  % insert blank page
-\usepackage[fleqn]{amsmath}             % matematika
-\usepackage{amssymb}
-\usepackage{graphicx}                   % embed gambar
-\usepackage{newtxtext,newtxmath}        % closest to licensed Times New Roman
-\usepackage{geometry}                   % untuk atur margin
+\usepackage{afterpage}            % insert blank page
+\usepackage[fleqn]{amsmath}       % matematika
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx}             % embed gambar
+\usepackage{newtxtext,newtxmath}  % closest to licensed Times New Roman
+\usepackage{geometry}             % untuk atur margin
 \usepackage{sectsty}
+\usepackage{steinmetz}            % untuk notasi phasor di EE degree
+\usepackage{fancyhdr}
 
 \usepackage[
     colorlinks=true,linkcolor=blue,citecolor=black
@@ -908,44 +910,45 @@ snippet boiler_tugas_2 "Versi lebih simple"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SETUPS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\geometry{margin=1in, top=0.1in}
+\geometry{margin=1in}
 
-\sectionfont{\Large}
+\sectionfont{\large}
 \subsectionfont{\large}
 
 \renewcommand{\figurename}{\textbf{Gambar}}
 
+\parindent 0pt % lebih baik no indent kecuali bener2 laporan resmi
 
+
+% Header %%%%%%%%
+\pagestyle{fancy}
+\fancyhead{}    % clear default headers
+\fancyfoot{}
+\fancyhead[L]{\large\textbf{$1}}  % Nama tugas
+\fancyhead[R]{Gabriel S / 5103018003}
+
+% Footer %%%%%%%%
+\fancyfoot[C]{JTE-UKWMS}
+\fancyfoot[R]{$2}       % Tanggal
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % START
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{$1}
-\author{$2}
-\date{$3}
 
 \begin{document}
-\maketitle
-\noindent\hrulefill
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Soal 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Tips: generate snippet soal-jawaban: soal_jwb<Alt-TAB>
-\section*{Soal 1}
-$4
+% SNIPPET: soal_jwb -> generate pairs of soal-jwb section
+$3
 
-\subsection*{Jawaban}
 
-\vspace{0.5in}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % END
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 endsnippet
 
 snippet soal_jwb "Generate soal jawab u/ template tugas 2"
@@ -957,6 +960,7 @@ $2
 
 \subsection*{Jawaban}
 
-\vspace{0.5in}
+
+\vfill
 
 endsnippet

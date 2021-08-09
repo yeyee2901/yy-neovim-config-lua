@@ -21,8 +21,8 @@ require('packer').startup(
     use {'wbthomason/packer.nvim'}
 
     -- File tree preview
-    use{'kyazdani42/nvim-web-devicons'}
-    use{'kyazdani42/nvim-tree.lua'}
+    use {'kyazdani42/nvim-web-devicons'}
+    use {'kyazdani42/nvim-tree.lua'}
 
     --Themes choose only one
     use {'tanvirtin/monokai.nvim'}
@@ -82,9 +82,6 @@ require('packer').startup(
     use {'tpope/vim-surround'}
 
     -- Markdown editing
-    -- run:
-    --    PackerUpdate
-    --    call mkdp#util#install()
     use {'iamcco/markdown-preview.nvim', run = ':call mkdp#util#install()'}
     use {'ferrine/md-img-paste.vim'}
 

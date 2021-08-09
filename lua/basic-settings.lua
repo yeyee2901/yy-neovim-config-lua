@@ -22,6 +22,7 @@ local my_options = {
   inccommand      = 'split',
   signcolumn      = 'yes',
   colorcolumn     = '0',
+  lazyredraw      = true,
 }
 
 -- Allow Lua syntax in vimscripts ('l' as in lua)

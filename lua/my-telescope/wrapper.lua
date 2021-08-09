@@ -11,7 +11,7 @@ local default_theme = 'get_ivy'   -- {"get_ivy", "get_dropdown", "get_cursor"}
 M.tele_open_config = function()
   builtin.find_files({
     cwd = '~/.config/nvim/',
-    prompt_title = ' < YY - Neovim Lua Config - YY >'
+    prompt_title = ' < Neovim Config >'
   })
 end
 

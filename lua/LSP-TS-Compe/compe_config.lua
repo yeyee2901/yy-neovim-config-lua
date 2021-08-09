@@ -15,7 +15,7 @@ require('compe').setup {
   max_kind_width = 70;
   max_menu_width = 100;
   documentation = {
-    border = "rounded", -- the border option is the same as `|help nvim_open_win|`
+    border = "rounded",
     winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
     max_width = 100,
     min_width = 60,
@@ -27,7 +27,7 @@ require('compe').setup {
   source = {
     path = true;
     buffer = true;
-    snippets_nvim = true;
+    snippets_nvim = false;
     ultisnips = true;
     nvim_lsp = true;
     nvim_lua = true;
