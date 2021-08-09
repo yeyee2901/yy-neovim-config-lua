@@ -102,10 +102,15 @@ _noremap('n', '<Leader>rn',  '<cmd>lua require("lspsaga.rename").rename()<CR>')
 
 
 -- PLUGIN: Nvim-compe (for code completion)
-_noremap_expr('i', '<Tab>', 'compe#confirm("<Tab>")')
-_noremap_expr('i', '<C-q>', 'compe#close("<C-q>")')
-_noremap_expr('i', '<C-k>', 'compe#scroll({"delta": -4})')
-_noremap_expr('i', '<C-j>', 'compe#scroll({"delta": +4})')
+-- confirm : pick item
+-- complete : open pop up suggestions
+-- close : obviously, close pop up menu
+-- scroll : scroll signature help
+_noremap_expr('i', '<Tab>',      'compe#confirm("<Tab>")')
+_noremap_expr('i', '<C-Space>',  'compe#complete("<M-Tab>")')
+_noremap_expr('i', '<C-q>',      'compe#close("<C-q>")')
+_noremap_expr('i', '<C-k>',      'compe#scroll({"delta": -4})')
+_noremap_expr('i', '<C-j>',      'compe#scroll({"delta": +4})')
 
 
 -- PLUGIN: fuGITive (the rest are provided by telescope functionality)
@@ -122,6 +127,8 @@ _noremap('n', '<Leader>gl', '<cmd>diffget //3<CR>')
 _noremap('n', '<Leader>mp', '<cmd>MarkdownPreviewToggle<CR>')
 _noremap('n', '<Leader>mi', '<cmd>call mdip#MarkdownClipboardImage()<CR>')
 
+-- PLUGIN: Tree-sitter
+_noremap('n', '<Leader>tp', '<cmd>TSPlaygroundToggle<CR>')
 
 -- PLUGIN: Telescope
 _noremap('n', '<Leader>t?',  '<cmd>lua require("my-telescope.wrapper").tele_keymaps()<CR>')

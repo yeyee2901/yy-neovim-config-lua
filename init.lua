@@ -43,10 +43,6 @@ require('keymaps')
 --require('themes.my-themes').set_codedark()
 require('themes.my-themes').set_custom()
 
--- For startup page
-vim.cmd('source ~/.config/nvim/start-page.vim')
-vim.cmd('autocmd VimEnter * call Start()')
-
 -- Temporary for LaTeX stuffs
 -- Currently, no API for autocommand & defining command
 vim.cmd('source ~/.config/nvim/autocmds.vim')

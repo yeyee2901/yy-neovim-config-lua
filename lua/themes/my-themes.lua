@@ -1,5 +1,8 @@
 local M = {}
 
+-- Dashboard
+require('themes.startify')
+
 -- Default
 M.lualine_set_themes = "nightfly"
 

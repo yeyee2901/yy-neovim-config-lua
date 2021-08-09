@@ -45,12 +45,8 @@ require('lualine').setup {
       },
     },
     lualine_c = {
-      {
-        'filename',
-        path = 0,
-      },
-      {
-        'diagnostics',
+      { 'filename', path = 0, },
+      { 'diagnostics',
         sources = {'nvim_lsp'},
         symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
         color_error = '#ff0000',
@@ -76,14 +72,14 @@ require('lualine').setup {
 
   inactive_sections = {
     lualine_a = {
-        {
-            'filetype',
-            colored = true
-        },
-        {
-            'filename',
-            path = 0,
-        },
+      {
+        'filetype',
+        colored = true
+      },
+      {
+        'filename',
+        path = 0,
+      },
     },
     lualine_b = {},
     lualine_c = {},

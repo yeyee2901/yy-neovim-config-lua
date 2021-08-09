@@ -38,14 +38,24 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-alias ls="exa -lah"
+alias ls="exa"
+alias la="exa -lah"
 alias grep='rg'
 alias cat='bat'
-alias cls="clear ; ls"
+alias cls="clear ; la"
 alias v='vim'
 alias nv='nvim'
 alias sk='screenkey'
-alias r='ranger'
+alias r='. ranger'
+
+# TMUX aliases
+alias t='tmux'
+alias tls='t list-session'
+alias tat='t attach-session -t'         # attach to target session
+alias tnews='t new-session -d -s'
+alias tneww='t new-window -n'           
+alias tkills='t kill-session -t'        # kill session, specify session name
+alias tkillw='t kill-window'            # kill current window
 
 # FFF file manager specific setups (show hidden files & use neovim 0.5.0 for default editor)
 export EDITOR="nvim"

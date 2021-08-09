@@ -14,3 +14,15 @@ augroup TransparentBackground
     autocmd VimEnter,BufEnter *.* highlight SignColumn guibg=#282c34
     autocmd VimEnter,BufEnter *.* highlight Normal guibg=#282c34
 augroup END
+
+augroup CIndentation
+    autocmd!
+augroup END
+
+" For c like files, clang formatting insist using 2 spaces
+augroup NonCIndent
+    autocmd!
+    autocmd FileType c,cpp,objc,objcpp,lua set tabstop=2
+    autocmd FileType c,cpp,objc,objcpp,lua set softtabstop=2
+    autocmd FileType c,cpp,objc,objcpp,lua set shiftwidth=2
+augroup END

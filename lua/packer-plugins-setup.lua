@@ -20,6 +20,9 @@ require('packer').startup(
     -- Packer self management, DO NOT REMOVE
     use {'wbthomason/packer.nvim'}
 
+    -- Start menu
+    use {'mhinz/vim-startify'}
+
     -- File tree preview
     use {'kyazdani42/nvim-web-devicons'}
     use {'kyazdani42/nvim-tree.lua'}
@@ -57,6 +60,7 @@ require('packer').startup(
 
     -- Tree Sitter
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use {'nvim-treesitter/playground'}
 
     -- Telescopeee, behold the most overpowered meta plugin
     use {'nvim-lua/popup.nvim'}
@@ -89,5 +93,5 @@ require('packer').startup(
 )
 
 if new_install then
-  vim.cmd('PackerUpdate')
+  vim.cmd('PackerInstall')
 end
