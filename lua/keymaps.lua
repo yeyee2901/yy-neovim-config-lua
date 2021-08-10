@@ -107,10 +107,12 @@ _noremap('n', '<Leader>rn',  '<cmd>lua require("lspsaga.rename").rename()<CR>')
 -- close : obviously, close pop up menu
 -- scroll : scroll signature help
 _noremap_expr('i', '<Tab>',      'compe#confirm("<Tab>")')
-_noremap_expr('i', '<C-Space>',  'compe#complete("<M-Tab>")')
+_noremap_expr('i', '<C-Space>',  'compe#complete("<C-Space>")')
 _noremap_expr('i', '<C-q>',      'compe#close("<C-q>")')
 _noremap_expr('i', '<C-k>',      'compe#scroll({"delta": -4})')
 _noremap_expr('i', '<C-j>',      'compe#scroll({"delta": +4})')
+
+-- P
 
 
 -- PLUGIN: fuGITive (the rest are provided by telescope functionality)

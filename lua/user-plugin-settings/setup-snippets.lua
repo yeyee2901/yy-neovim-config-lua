@@ -1,11 +1,13 @@
--- All the keymaps specified here are for INSERT mode, since
--- we can only expand snippets in INSERT mode.
--- This also includes ListSnippets!
+-- For some reason, calling ExpandTrigger,
+-- will make nvim-compe completion behave
+-- like a UltiSnips placeholder.
+-- So we can make type functions completions behave like 
+-- UltiSnips snippets
 local options = {
   UltiSnipsExpandTrigger = "<M-CR>",
   UltiSnipsJumpForwardTrigger= "<M-CR>",
   UltiSnipsJumpBackwardTrigger = "<M-BS>",
-  UltiSnipsListSnippets = "<M-?>",
+  UltiSnipsListSnippets = "<C-?>",
   UltiSnipsEditSplit = "vertical",
 }
 
