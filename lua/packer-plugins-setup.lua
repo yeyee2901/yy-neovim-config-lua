@@ -33,8 +33,11 @@ require('packer').startup(
     use {'ayu-theme/ayu-vim'}
     use {'folke/tokyonight.nvim'}
     use {'ray-x/aurora'}
-    use {'npxbr/gruvbox.nvim', requires = {'rktjmp/lush.nvim'} }
+--    use {'morhetz/gruvbox'}
     use {'tjdevries/gruvbuddy.nvim', requires = {'tjdevries/colorbuddy.vim'} }
+
+    -- still in alpha, color is confusing
+    use {'npxbr/gruvbox.nvim', requires = {'rktjmp/lush.nvim'} }
 
     -- Status line
     use {'hoob3rt/lualine.nvim',

@@ -52,9 +52,20 @@ end
 
 -- The almighty gruvbox
 M.set_gruvbox = function ()
+  -- Options has to set before setting colorscheme
+  local gruv_opts = {
+    gruvbox_italicize_comments = true,
+    gruvbox_italicize_strings = true,   -- apparently, func == string, so as to avoid confusion, string will be italic
+    gruvbox_contrast_dark = 'medium',
+  }
+
+  for option,value in pairs(gruv_opts) do
+    vim.g[option] = value
+  end
+
   vim.o.background = 'dark'
   vim.cmd('colorscheme gruvbox')
-  lualine.setup_lualine('gruvbox_material')
+  lualine.setup_lualine('gruvbox')
   vim.cmd('autocmd VimEnter * highlight SignColumn guibg=#2929229')
 end
 
