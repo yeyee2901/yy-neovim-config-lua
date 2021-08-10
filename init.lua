@@ -41,7 +41,8 @@ require('keymaps')
 --require('themes.my-themes').set_ayu("mirage")
 --require('themes.my-themes').set_tokyonight("night")
 --require('themes.my-themes').set_codedark()
-require('themes.my-themes').set_custom()
+--require('themes.my-themes').set_custom()
+require('themes.my-themes').set_gruvbox()
 
 -- Temporary for LaTeX stuffs
 -- Currently, no API for autocommand & defining command

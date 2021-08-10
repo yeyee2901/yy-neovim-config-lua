@@ -33,11 +33,8 @@ require('packer').startup(
     use {'ayu-theme/ayu-vim'}
     use {'folke/tokyonight.nvim'}
     use {'ray-x/aurora'}
-    use {'tjdevries/gruvbuddy.nvim',
-      requires = {
-        'tjdevries/colorbuddy.vim'
-      },
-    }
+    use {'npxbr/gruvbox.nvim', requires = {'rktjmp/lush.nvim'} }
+    use {'tjdevries/gruvbuddy.nvim', requires = {'tjdevries/colorbuddy.vim'} }
 
     -- Status line
     use {'hoob3rt/lualine.nvim',
