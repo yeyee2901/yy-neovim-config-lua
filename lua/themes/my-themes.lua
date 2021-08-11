@@ -72,6 +72,35 @@ M.set_gruvbox = function ()
   vim.cmd('hi link Function GruvboxAquaBold')
 end
 
+-- More almighty gruvbox material, with treesitter support
+M.set_gruvbox_material = function ()
+  if vim.fn.has('termguicolors') then
+    vim.o.termguicolors = true
+    local opts = {
+      gruvbox_material_enable_bold = true,
+      gruvbox_material_enable_italic = true,
+      gruvbox_material_transparent_background = true,
+      gruvbox_material_visual = 'reverse',
+      gruvbox_material_sign_column_background = 'none',
+      gruvbox_material_ui_contrast = 'low',
+      gruvbox_material_diagnostic_line_highlight = false,
+      gruvbox_material_diagnostic_text_highlight = false,
+      gruvbox_material_palette = 'mix',
+    }
+
+    for option,value in pairs(opts) do
+      vim.g[option] = value
+    end
+    vim.cmd("colorscheme gruvbox-material")
+
+  else
+    print('Your Neovim apparently does not support termguicolors')
+  end
+
+  lualine.setup_lualine('gruvbox')
+end
+
+
 -- Vim colorizer
 require('colorizer').setup()
 

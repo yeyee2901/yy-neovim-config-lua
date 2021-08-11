@@ -27,16 +27,8 @@ function SimpleTabline()
       let tabline .= '%#TabLine#'
     endif
 
-    " Set tab page number
-    let tabline .= '%' . (i + 1) . 'T'
-
     " get label
     let tabline .= ' %{SimpleTabLabel(' . (i + 1) . ')}'
-
-    " Display how many windows are open in that tab
-    if i+1 == tabpagenr()
-        let tabline .= '%#TabLineSel#'
-    endif
 
     " Finally the separator
     let tabline .= s:separator
@@ -46,3 +38,5 @@ function SimpleTabline()
 endfunction
 
 set tabline=%!SimpleTabline()
+
+hi TabLineSel guibg=#504945 guifg=#B8BB26

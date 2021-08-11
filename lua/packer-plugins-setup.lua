@@ -39,6 +39,9 @@ require('packer').startup(
     -- still in alpha, color is confusing
     use {'npxbr/gruvbox.nvim', requires = {'rktjmp/lush.nvim'} }
 
+    -- Still testing, but apparently it has tree-sitter support
+    use {'sainnhe/gruvbox-material'}
+
     -- Status line
     use {'hoob3rt/lualine.nvim',
       requires = {
