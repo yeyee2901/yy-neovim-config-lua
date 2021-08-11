@@ -91,6 +91,11 @@ M.set_gruvbox_material = function ()
     for option,value in pairs(opts) do
       vim.g[option] = value
     end
+
+    if vim.g.gruvbox_material_transparent_background then
+    vim.cmd('highlight Normal guibg=none')
+    end
+
     vim.cmd("colorscheme gruvbox-material")
 
   else

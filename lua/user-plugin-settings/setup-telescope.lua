@@ -1,5 +1,5 @@
 local preview_size = 30  -- 50% of the screen size
-local transparency = 10  -- in percent
+local transparency = 0  -- in percent
 
 require('telescope').setup{
   defaults = {
