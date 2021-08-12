@@ -1,3 +1,17 @@
+#                                                                                          #
+#                                                                                          #
+#    ████████  ████████ ██      ██     ██████                      ████ ██                 #
+#   ░░░░░░██  ██░░░░░░ ░██     ░██    ██░░░░██                    ░██░ ░░   █████          #
+#        ██  ░██       ░██     ░██   ██    ░░   ██████  ███████  ██████ ██ ██░░░██         #
+#       ██   ░█████████░██████████  ░██        ██░░░░██░░██░░░██░░░██░ ░██░██  ░██         #
+#      ██    ░░░░░░░░██░██░░░░░░██  ░██       ░██   ░██ ░██  ░██  ░██  ░██░░██████         #
+#     ██            ░██░██     ░██  ░░██    ██░██   ░██ ░██  ░██  ░██  ░██ ░░░░░██         #
+#    ████████ ████████ ░██     ░██   ░░██████ ░░██████  ███  ░██  ░██  ░██  █████          #
+#   ░░░░░░░░ ░░░░░░░░  ░░      ░░     ░░░░░░   ░░░░░░  ░░░   ░░   ░░   ░░  ░░░░░           #
+#                                                                                          #
+############################################################################################
+# Last update: August 2021
+
 # PATH EXPORTS
 export ZSH_CONFIG=$HOME/.zshrc
 export PICO_SDK_PATH=$HOME/Documents/EmbeddedSystem/raspberry-pico/pico-sdk/
@@ -8,7 +22,7 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin:$HOME/.config/nvim/plugged/:$HOME/.lo
 export ZSH=$HOME/.oh-my-zsh
 
 # awesomepanda, af-magic, amuse
-ZSH_THEME="amuse"
+ZSH_THEME="af-magic"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
