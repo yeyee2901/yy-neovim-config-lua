@@ -15,8 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 
-require('packer').startup(
-  function()
+require('packer').startup(function()
     -- Packer self management, DO NOT REMOVE
     use {'wbthomason/packer.nvim'}
 
@@ -33,7 +32,6 @@ require('packer').startup(
     use {'ayu-theme/ayu-vim'}
     use {'folke/tokyonight.nvim'}
     use {'ray-x/aurora'}
---    use {'morhetz/gruvbox'}
     use {'tjdevries/gruvbuddy.nvim', requires = {'tjdevries/colorbuddy.vim'} }
 
     -- still in alpha, color is confusing
@@ -43,11 +41,7 @@ require('packer').startup(
     use {'sainnhe/gruvbox-material'}
 
     -- Status line
-    use {'hoob3rt/lualine.nvim',
-      requires = {
-        'kyazdani42/nvim-tree.lua'
-      }
-    }
+    use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-tree.lua'} }
 
     -- Colorizer for color codes like this one -> #ff0000
     use {'norcalli/nvim-colorizer.lua'}
@@ -71,11 +65,7 @@ require('packer').startup(
     use {'nvim-telescope/telescope.nvim'}
     use {'nvim-telescope/telescope-symbols.nvim'}
     use {'nvim-telescope/telescope-fzy-native.nvim'}
-    use { 'fhill2/telescope-ultisnips.nvim',
-      requires = {
-        'SirVer/ultisnips'
-        }
-    }
+    use { 'fhill2/telescope-ultisnips.nvim', requires = {'SirVer/ultisnips'} }
 
     -- Git it gud
     use {'tpope/vim-fugitive'}

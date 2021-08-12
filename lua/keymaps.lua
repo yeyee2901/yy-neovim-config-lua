@@ -19,6 +19,8 @@ vim.g.maplocalleader = ' '
 -- Togle highlighting after searching
 _noremap('n', '<S-h>', '<cmd>set hlsearch!<CR>')
 
+-- Make <S-y> behaves the same as <S-d> , <S-C>
+_noremap('n', '<S-y>', 'y$')
 
 -- Visual mode editing ----------------------------------------------------------
 _noremap('v', '<Tab>',   '>gv')

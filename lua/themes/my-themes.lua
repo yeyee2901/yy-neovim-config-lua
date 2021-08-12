@@ -86,14 +86,11 @@ M.set_gruvbox_material = function ()
       gruvbox_material_diagnostic_line_highlight = false,
       gruvbox_material_diagnostic_text_highlight = false,
       gruvbox_material_palette = 'mix',
+      gruvbox_material_disable_italic_comment = true, -- apparently, only works with icursive fonts
     }
 
     for option,value in pairs(opts) do
       vim.g[option] = value
-    end
-
-    if vim.g.gruvbox_material_transparent_background then
-    vim.cmd('highlight Normal guibg=none')
     end
 
     vim.cmd("colorscheme gruvbox-material")
