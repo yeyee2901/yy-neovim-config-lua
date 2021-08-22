@@ -1,4 +1,9 @@
 # Neovim >= 0.5.0 Configuration files in Lua
+This repository is now archived. For further udpates, please refer to [my dotfiles repository](https://github.com/yeyee2901/dotfiles) as I will be updating
+most of my config from there. The repository includes Tmux config, ZSH config, and Neovim Config.
+  
+  
+&nbsp;  
 ![start](img/start-art.png)
 
 ## 2 Top themes  
